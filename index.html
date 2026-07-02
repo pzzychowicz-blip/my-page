@@ -15,7 +15,7 @@
       content="Real production software, shipped the AI-native way. Sole developer of MGT Bookings, a live restaurant reservation system in daily use."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/bookings-timeline-dark.webp" />
+    <meta property="og:image" content="assets/bk-timeline-dark.webp" />
     <link rel="icon" type="image/svg+xml" href="assets/pz-mark.svg" />
 
     <!-- No-flash theme paint: same pattern as the MGT apps — resolve the theme
@@ -168,41 +168,152 @@
                     </span>
                     <img
                       class="light-only"
-                      src="assets/bookings-timeline-light.webp"
+                      src="assets/bk-timeline-light.webp"
                       alt="MGT Bookings timeline view: a Gantt-style grid of the day's reservations across 13 tables, with seated and confirmed bookings and a live now-line"
                       width="1440" height="900" loading="lazy"
                     />
                     <img
                       class="dark-only"
-                      src="assets/bookings-timeline-dark.webp"
+                      src="assets/bk-timeline-dark.webp"
                       alt="MGT Bookings timeline view in dark mode: a Gantt-style grid of the day's reservations across 13 tables"
                       width="1440" height="900" loading="lazy"
                     />
                   </button>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
-                      data-light="assets/bookings-timeline-light.webp"
-                      data-dark="assets/bookings-timeline-dark.webp"
-                      data-label="Timeline — the day's service at a glance"
-                      data-alt="MGT Bookings timeline view: reservations across 13 tables with a live now-line">
-                      <img class="light-only" src="assets/bookings-timeline-light.webp" alt="Timeline view thumbnail" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/bookings-timeline-dark.webp" alt="Timeline view thumbnail" width="1440" height="900" loading="lazy" />
+                      data-light="assets/bk-timeline-light.webp"
+                      data-dark="assets/bk-timeline-dark.webp"
+                      data-label="Timeline · the day's service at a glance"
+                      data-alt="Gantt-style timeline of reservations across 13 tables with a live now-line"
+                      aria-label="Timeline · the day's service at a glance">
+                      <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
-                      data-light="assets/bookings-list-light.webp"
-                      data-dark="assets/bookings-list-dark.webp"
-                      data-label="List view — bookings as cards with statuses"
-                      data-alt="MGT Bookings list view: booking cards with statuses, party sizes, and table assignments">
-                      <img class="light-only" src="assets/bookings-list-light.webp" alt="List view thumbnail" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/bookings-list-dark.webp" alt="List view thumbnail" width="1440" height="900" loading="lazy" />
+                      data-light="assets/bk-week-light.webp"
+                      data-dark="assets/bk-week-dark.webp"
+                      data-label="Week and month summary · covers per day"
+                      data-alt="Week and month summary panel showing covers and booking counts per day"
+                      aria-label="Week and month summary · covers per day">
+                      <img class="light-only" src="assets/bk-week-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-week-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
-                      data-light="assets/bookings-whatsapp-light.webp"
-                      data-dark="assets/bookings-whatsapp-dark.webp"
-                      data-label="WhatsApp inbox — LLM-parsed booking intake (in progress)"
-                      data-alt="MGT Bookings WhatsApp inbox: customer conversations with an AI-parsed, linked booking card">
-                      <img class="light-only" src="assets/bookings-whatsapp-light.webp" alt="WhatsApp inbox thumbnail" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/bookings-whatsapp-dark.webp" alt="WhatsApp inbox thumbnail" width="1440" height="900" loading="lazy" />
+                      data-light="assets/bk-list-light.webp"
+                      data-dark="assets/bk-list-dark.webp"
+                      data-label="List view · bookings as cards with statuses"
+                      data-alt="List view with booking cards, statuses, party sizes and table assignments"
+                      aria-label="List view · bookings as cards with statuses">
+                      <img class="light-only" src="assets/bk-list-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-list-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-edit-light.webp"
+                      data-dark="assets/bk-edit-dark.webp"
+                      data-label="Booking editor · status, tables, duration"
+                      data-alt="Edit booking modal with status buttons, table assignment and duration stepper"
+                      aria-label="Booking editor · status, tables, duration">
+                      <img class="light-only" src="assets/bk-edit-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-edit-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-history-light.webp"
+                      data-dark="assets/bk-history-dark.webp"
+                      data-label="Booking history · a full audit trail"
+                      data-alt="Booking history popup listing every change with author and timestamp"
+                      aria-label="Booking history · a full audit trail">
+                      <img class="light-only" src="assets/bk-history-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-history-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-new-light.webp"
+                      data-dark="assets/bk-new-dark.webp"
+                      data-label="New booking · availability shown as you type"
+                      data-alt="New booking form with live availability summary and table suggestions"
+                      aria-label="New booking · availability shown as you type">
+                      <img class="light-only" src="assets/bk-new-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-assign-light.webp"
+                      data-dark="assets/bk-assign-dark.webp"
+                      data-label="Manual table assignment · clusters and capacity math"
+                      data-alt="Manual table assignment modal showing table clusters with combined capacities"
+                      aria-label="Manual table assignment · clusters and capacity math">
+                      <img class="light-only" src="assets/bk-assign-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-assign-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-walkin-light.webp"
+                      data-dark="assets/bk-walkin-dark.webp"
+                      data-label="Walk-in · seat a party in seconds"
+                      data-alt="Walk-in form with duration and quick table picker"
+                      aria-label="Walk-in · seat a party in seconds">
+                      <img class="light-only" src="assets/bk-walkin-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-walkin-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-block-light.webp"
+                      data-dark="assets/bk-block-dark.webp"
+                      data-label="Table blocking · take a table out of service"
+                      data-alt="Block table modal with a from-to time range"
+                      aria-label="Table blocking · take a table out of service">
+                      <img class="light-only" src="assets/bk-block-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-block-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-general-light.webp"
+                      data-dark="assets/bk-settings-general-dark.webp"
+                      data-label="Settings · hours, shifts, auto-optimizer"
+                      data-alt="General settings with opening hours, shift split and auto-optimizer"
+                      aria-label="Settings · hours, shifts, auto-optimizer">
+                      <img class="light-only" src="assets/bk-settings-general-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-general-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-layout-light.webp"
+                      data-dark="assets/bk-settings-layout-dark.webp"
+                      data-label="Layout settings · tables, combos, kitchen limit"
+                      data-alt="Layout settings listing tables, combos and the kitchen load limit"
+                      aria-label="Layout settings · tables, combos, kitchen limit">
+                      <img class="light-only" src="assets/bk-settings-layout-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-layout-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-reminders-light.webp"
+                      data-dark="assets/bk-settings-reminders-dark.webp"
+                      data-label="Recurring staff reminders"
+                      data-alt="Reminders settings tab with recurring weekly staff reminders"
+                      aria-label="Recurring staff reminders">
+                      <img class="light-only" src="assets/bk-settings-reminders-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-reminders-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-shortcuts-light.webp"
+                      data-dark="assets/bk-settings-shortcuts-dark.webp"
+                      data-label="Keyboard shortcuts · the whole app without a mouse"
+                      data-alt="Keyboard shortcuts cheatsheet"
+                      aria-label="Keyboard shortcuts · the whole app without a mouse">
+                      <img class="light-only" src="assets/bk-settings-shortcuts-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-shortcuts-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-whatsapp-light.webp"
+                      data-dark="assets/bk-whatsapp-dark.webp"
+                      data-label="WhatsApp inbox · LLM-parsed booking intake (in progress)"
+                      data-alt="WhatsApp inbox with customer conversations and an AI-parsed linked booking card"
+                      aria-label="WhatsApp inbox · LLM-parsed booking intake (in progress)">
+                      <img class="light-only" src="assets/bk-whatsapp-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-whatsapp-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-simulator-light.webp"
+                      data-dark="assets/bk-simulator-dark.webp"
+                      data-label="WhatsApp simulator · the AI pipeline's test harness"
+                      data-alt="WhatsApp simulator panel driving the Gemini parsing pipeline with generated scenarios"
+                      aria-label="WhatsApp simulator · the AI pipeline's test harness">
+                      <img class="light-only" src="assets/bk-simulator-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-simulator-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                   </div>
                 </div>
@@ -240,33 +351,116 @@
                     </span>
                     <img
                       class="light-only"
-                      src="assets/scheduling-pills-light.webp"
+                      src="assets/sc-week-pills-light.webp"
                       alt="MGT Scheduling: a generated weekly staff schedule with names and coloured role pills on every shift"
                       width="1440" height="900" loading="lazy"
                     />
                     <img
                       class="dark-only"
-                      src="assets/scheduling-pills-dark.webp"
+                      src="assets/sc-week-pills-dark.webp"
                       alt="MGT Scheduling in dark mode: a generated weekly staff schedule with names and coloured role pills"
                       width="1440" height="900" loading="lazy"
                     />
                   </button>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
-                      data-light="assets/scheduling-pills-light.webp"
-                      data-dark="assets/scheduling-pills-dark.webp"
-                      data-label="Auto-generated week — role pills on every shift"
-                      data-alt="MGT Scheduling weekly grid filled by the auto-generator, with names and coloured role pills">
-                      <img class="light-only" src="assets/scheduling-pills-light.webp" alt="Generated schedule thumbnail" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/scheduling-pills-dark.webp" alt="Generated schedule thumbnail" width="1440" height="900" loading="lazy" />
+                      data-light="assets/sc-week-pills-light.webp"
+                      data-dark="assets/sc-week-pills-dark.webp"
+                      data-label="Auto-generated week · role pills on every shift"
+                      data-alt="Weekly schedule filled by the auto-generator with names and coloured role pills"
+                      aria-label="Auto-generated week · role pills on every shift">
+                      <img class="light-only" src="assets/sc-week-pills-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-week-pills-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
-                      data-light="assets/scheduling-light.webp"
-                      data-dark="assets/scheduling-dark.webp"
-                      data-label="Open shifts — the week before assignment"
-                      data-alt="MGT Scheduling weekly grid showing open, unassigned shifts per section and day part">
-                      <img class="light-only" src="assets/scheduling-light.webp" alt="Open shifts thumbnail" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/scheduling-dark.webp" alt="Open shifts thumbnail" width="1440" height="900" loading="lazy" />
+                      data-light="assets/sc-week-open-light.webp"
+                      data-dark="assets/sc-week-open-dark.webp"
+                      data-label="Open shifts · the week before assignment"
+                      data-alt="Weekly grid showing open unassigned shifts per section and day part"
+                      aria-label="Open shifts · the week before assignment">
+                      <img class="light-only" src="assets/sc-week-open-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-week-open-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-cell-light.webp"
+                      data-dark="assets/sc-cell-dark.webp"
+                      data-label="Shift cell editor · assignee, role, custom times"
+                      data-alt="Shift cell modal with assignee dropdown, role chips and per-cell times"
+                      aria-label="Shift cell editor · assignee, role, custom times">
+                      <img class="light-only" src="assets/sc-cell-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-cell-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-swap-light.webp"
+                      data-dark="assets/sc-swap-dark.webp"
+                      data-label="Swap mode · move staff between filled cells"
+                      data-alt="Swap mode banner asking to pick a source cell on the schedule grid"
+                      aria-label="Swap mode · move staff between filled cells">
+                      <img class="light-only" src="assets/sc-swap-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-swap-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-export-light.webp"
+                      data-dark="assets/sc-export-dark.webp"
+                      data-label="Export guard · warns before an incomplete PDF"
+                      data-alt="Export warning dialog counting empty cells before generating the PDF"
+                      aria-label="Export guard · warns before an incomplete PDF">
+                      <img class="light-only" src="assets/sc-export-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-export-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-employees-light.webp"
+                      data-dark="assets/sc-employees-dark.webp"
+                      data-label="Employee roster · roles, patterns, active dates"
+                      data-alt="Employees tab listing staff with role badges, patterns and active dates"
+                      aria-label="Employee roster · roles, patterns, active dates">
+                      <img class="light-only" src="assets/sc-employees-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-employees-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-employee-edit-light.webp"
+                      data-dark="assets/sc-employee-edit-dark.webp"
+                      data-label="Employee editor · roles, working days, priority"
+                      data-alt="Edit employee modal with roles, shift preference, working days and generator priority"
+                      aria-label="Employee editor · roles, working days, priority">
+                      <img class="light-only" src="assets/sc-employee-edit-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-employee-edit-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-requests-light.webp"
+                      data-dark="assets/sc-requests-dark.webp"
+                      data-label="Requests · day-off and holiday, respected by the generator"
+                      data-alt="Requests tab with day-off and holiday requests"
+                      aria-label="Requests · day-off and holiday, respected by the generator">
+                      <img class="light-only" src="assets/sc-requests-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-requests-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-settings-light.webp"
+                      data-dark="assets/sc-settings-dark.webp"
+                      data-label="Settings · config changes scheduled by week"
+                      data-alt="Settings with scheduled configuration changes and operating time"
+                      aria-label="Settings · config changes scheduled by week">
+                      <img class="light-only" src="assets/sc-settings-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-settings-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-autogen-light.webp"
+                      data-dark="assets/sc-autogen-dark.webp"
+                      data-label="Auto-generator rules · role match and quotas"
+                      data-alt="Auto-generator settings with strict shift-preference matching"
+                      aria-label="Auto-generator rules · role match and quotas">
+                      <img class="light-only" src="assets/sc-autogen-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-autogen-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/sc-staffing-light.webp"
+                      data-dark="assets/sc-staffing-dark.webp"
+                      data-label="Staffing needs · per section, per day part"
+                      data-alt="Front of house staffing configuration with per-shift counts and times"
+                      aria-label="Staffing needs · per section, per day part">
+                      <img class="light-only" src="assets/sc-staffing-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/sc-staffing-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                   </div>
                 </div>
