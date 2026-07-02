@@ -73,6 +73,83 @@
     window.location.href = "mailto:" + user + "@" + host;
   });
 
+  /* ── Screenshot galleries + lightbox ──────────────────────────────────────
+     Each .gallery has a main shot (a <button>) and a .thumbs strip. Thumbs
+     swap the main image; clicking the main shot opens the lightbox, which
+     navigates the same item list. Light/dark variants follow the site theme. */
+  var lightbox = document.getElementById("lightbox");
+  var lbImg = lightbox.querySelector("img");
+  var lbCaption = lightbox.querySelector("figcaption");
+  var lbState = { items: [], index: 0, opener: null };
+
+  function themedSrc(item) {
+    return root.dataset.theme === "dark" ? item.dark : item.light;
+  }
+
+  function lbShow(i) {
+    lbState.index = (i + lbState.items.length) % lbState.items.length;
+    var item = lbState.items[lbState.index];
+    lbImg.src = themedSrc(item);
+    lbImg.alt = item.alt;
+    lbCaption.textContent = item.label;
+  }
+
+  function lbOpen(items, index, opener) {
+    lbState.items = items;
+    lbState.opener = opener;
+    lbShow(index);
+    lightbox.hidden = false;
+    document.body.classList.add("lb-open");
+    lightbox.querySelector(".lb-close").focus();
+  }
+
+  function lbClose() {
+    lightbox.hidden = true;
+    lbImg.src = "";
+    document.body.classList.remove("lb-open");
+    if (lbState.opener) lbState.opener.focus();
+  }
+
+  lightbox.querySelector(".lb-close").addEventListener("click", lbClose);
+  lightbox.querySelector(".lb-prev").addEventListener("click", function () { lbShow(lbState.index - 1); });
+  lightbox.querySelector(".lb-next").addEventListener("click", function () { lbShow(lbState.index + 1); });
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox || e.target.tagName === "FIGURE") lbClose();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") lbClose();
+    else if (e.key === "ArrowLeft") lbShow(lbState.index - 1);
+    else if (e.key === "ArrowRight") lbShow(lbState.index + 1);
+  });
+
+  document.querySelectorAll(".gallery").forEach(function (gallery) {
+    var main = gallery.querySelector(".gallery-main");
+    var mainLight = main.querySelector("img.light-only");
+    var mainDark = main.querySelector("img.dark-only");
+    var thumbs = [].slice.call(gallery.querySelectorAll(".thumb"));
+    var items = thumbs.map(function (t) {
+      return { light: t.dataset.light, dark: t.dataset.dark, alt: t.dataset.alt, label: t.dataset.label };
+    });
+    var current = 0;
+
+    thumbs.forEach(function (thumb, i) {
+      thumb.addEventListener("click", function () {
+        current = i;
+        mainLight.src = items[i].light;
+        mainDark.src = items[i].dark;
+        mainLight.alt = items[i].alt;
+        mainDark.alt = items[i].alt;
+        thumbs.forEach(function (t) { t.classList.remove("is-active"); });
+        thumb.classList.add("is-active");
+      });
+    });
+
+    main.addEventListener("click", function () {
+      lbOpen(items, current, main);
+    });
+  });
+
   /* ── Liquid-glass refraction (progressive enhancement) ────────────────────
      backdrop-filter: url(#frosted) — an SVG displacement-map lens — only
      renders in Chromium. Safari/Firefox parse it but paint nothing, which

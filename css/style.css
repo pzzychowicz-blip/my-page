@@ -466,14 +466,23 @@ h2 {
   color: var(--text-faint);
 }
 
-/* Screenshot frame — browser-chrome bezel around the app shot */
+/* Screenshot frame — browser-chrome bezel around the app shot.
+   It's a <button> (opens the lightbox), so reset button chrome too. */
 .shot {
+  display: block;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: zoom-in;
   border-radius: 20px;
   background: var(--bg-shell);
   border: 1px solid var(--border-card);
   padding: 8px;
   box-shadow: var(--shadow-float);
+  transition: transform 500ms cubic-bezier(0.32, 0.72, 0, 1);
 }
+
+.shot:hover { transform: translateY(-3px); }
 
 .shot .chrome {
   display: flex;
@@ -506,10 +515,106 @@ h2 {
 
 .shot img { border-radius: 12px; width: 100%; height: auto; }
 
-/* theme-aware screenshot swap */
-.shot img.dark-only { display: none; }
-[data-theme="dark"] .shot img.dark-only { display: block; }
-[data-theme="dark"] .shot img.light-only { display: none; }
+/* theme-aware screenshot swap (main shots + thumbnails) */
+.gallery img.dark-only { display: none; }
+[data-theme="dark"] .gallery img.dark-only { display: block; }
+[data-theme="dark"] .gallery img.light-only { display: none; }
+
+/* Thumbnail strip under the main shot */
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.thumb {
+  padding: 4px;
+  font: inherit;
+  border-radius: 12px;
+  background: var(--bg-shell);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 300ms cubic-bezier(0.32, 0.72, 0, 1), transform 300ms cubic-bezier(0.32, 0.72, 0, 1), border-color 300ms ease;
+}
+
+.thumb:hover { opacity: 1; transform: translateY(-2px); }
+
+.thumb.is-active {
+  opacity: 1;
+  border-color: rgba(var(--accent-rgb), 0.55);
+}
+
+.thumb img { border-radius: 8px; width: 100%; height: auto; }
+
+/* ── Lightbox ──────────────────────────────────────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  background: rgba(10, 12, 18, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.lightbox[hidden] { display: none; }
+
+.lightbox figure {
+  margin: 0;
+  max-width: min(1400px, 92vw);
+  text-align: center;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox figcaption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lb-close,
+.lb-nav {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 250ms ease, transform 250ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.lb-close { position: absolute; top: 22px; right: 22px; }
+.lb-close:hover, .lb-nav:hover { background: rgba(255, 255, 255, 0.24); transform: scale(1.06); }
+.lb-close svg, .lb-nav svg { width: 18px; height: 18px; }
+
+body.lb-open { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .lightbox { padding: 12px; gap: 8px; }
+  .lb-nav { width: 38px; height: 38px; }
+}
 
 /* ── Skills / how I work ───────────────────────────────────────────────────── */
 
