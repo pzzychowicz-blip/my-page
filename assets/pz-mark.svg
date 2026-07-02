@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f97ff"/>
+      <stop offset="0.55" stop-color="#007aff"/>
+      <stop offset="1" stop-color="#0057c2"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="0.4" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#chip)"/>
+  <rect x="5.5" y="5.5" width="117" height="117" rx="28.5" fill="none" stroke="url(#rim)" stroke-width="3"/>
+  <g fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 90 V38 H54 a12 12 0 0 1 0 24 H36"/>
+    <path d="M72 62 H92 L72 90 H92"/>
+  </g>
+</svg>

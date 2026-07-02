@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patryk Zychowicz — AI-Native Developer & Product Builder</title>
+    <meta
+      name="description"
+      content="Self-taught builder shipping real production apps with AI-native tools (React, Firebase, Claude Code). Sole developer of MGT Bookings, a live restaurant reservation system in daily use."
+    />
+    <meta name="theme-color" content="#007AFF" />
+    <meta property="og:title" content="Patryk Zychowicz — AI-Native Developer & Product Builder" />
+    <meta
+      property="og:description"
+      content="Real production software, shipped the AI-native way. Sole developer of MGT Bookings, a live restaurant reservation system in daily use."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/bookings-timeline-dark.webp" />
+    <link rel="icon" type="image/svg+xml" href="assets/pz-mark.svg" />
+
+    <!-- No-flash theme paint: same pattern as the MGT apps — resolve the theme
+         BEFORE first paint so there is never a wrong-theme flash. -->
+    <script>
+      (function () {
+        var pref = null;
+        try { pref = localStorage.getItem("pz-theme"); } catch (e) {}
+        var dark =
+          pref === "dark" ||
+          (pref !== "light" &&
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Liquid-glass refraction filter (Chromium progressive enhancement).
+         js/main.js turns it on by adding .lg-on to <html>. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <filter id="frosted" primitiveUnits="objectBoundingBox">
+        <feImage href="assets/dispmap.png" x="0" y="0" width="1" height="1" result="map" />
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0.012" result="blur" />
+        <feDisplacementMap in="blur" in2="map" scale="0.4" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav-mark" href="#top" aria-label="Back to top">
+        <img src="assets/pz-mark.svg" alt="" width="30" height="30" />
+      </a>
+      <a class="link" href="#work">Work</a>
+      <a class="link" href="#skills">Skills</a>
+      <a class="link optional" href="#experience">Experience</a>
+      <a class="link" href="#contact">Contact</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.4" />
+          <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7" />
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.4 14.2A8.4 8.4 0 0 1 9.8 3.6a8.4 8.4 0 1 0 10.6 10.6z" />
+        </svg>
+      </button>
+    </nav>
+
+    <main id="top">
+      <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+      <header class="hero">
+        <div class="wrap">
+          <span class="eyebrow reveal">Patryk Zychowicz · Portfolio</span>
+          <h1 class="reveal">
+            Real software, shipped<br />
+            the <span class="accent">AI-native</span> way.
+          </h1>
+          <p class="lede reveal">
+            Self-taught builder shipping production web apps by directing AI coding
+            tools (React, Firebase, Claude Code), with the process discipline of a
+            7-year airline career behind it. My flagship app runs a real
+            restaurant's bookings, every day.
+          </p>
+          <div class="hero-meta reveal">
+            <span>Fuerteventura, Spain</span>
+            <span class="dot">Open to Remote (EU)</span>
+            <span class="dot">EU citizen</span>
+          </div>
+          <div class="hero-ctas reveal">
+            <a class="btn btn-primary" href="#work">
+              View my work
+              <span class="disc" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 2.5v11M3.5 9 8 13.5 12.5 9" />
+                </svg>
+              </span>
+            </a>
+            <a class="btn btn-glass" href="https://github.com/pzzychowicz-blip" target="_blank" rel="noopener">
+              GitHub
+              <span class="disc" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- ── Featured work ────────────────────────────────────────────────── -->
+      <section id="work">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow reveal">Featured work</span>
+            <h2 class="reveal">Built, shipped, and in daily use.</h2>
+            <p class="lede reveal">
+              Not demos: working software with real users and real constraints,
+              from data modelling to deployment.
+            </p>
+          </div>
+
+          <!-- MGT Bookings -->
+          <article class="project reveal">
+            <div class="project-inner">
+              <div class="project-body">
+                <div class="project-copy">
+                  <span class="badge badge-live"><i class="pulse"></i> Live in production</span>
+                  <h3>MGT Bookings</h3>
+                  <p class="sub">Sole developer &amp; owner · v15.8.1</p>
+                  <p class="desc">
+                    A staff-facing restaurant reservation system in active daily use
+                    at a 13-table restaurant in the Canary Islands. Full product
+                    lifecycle: requirements, data modelling, UI design, deployment,
+                    and iterative refactoring.
+                  </p>
+                  <ul class="stats">
+                    <li>128 commits</li>
+                    <li>3 tagged releases</li>
+                    <li>React 19 · Vite</li>
+                    <li>Firebase RTDB + Auth</li>
+                    <li>Vercel CI/CD</li>
+                  </ul>
+                  <ul class="highlights">
+                    <li>Diagnosed a real data-loss incident and designed a write-guard pattern to prevent recurrence</li>
+                    <li>Directed a multi-phase refactor from monolith to modular hooks and components</li>
+                    <li>Encoded real-world constraints: table-clustering rules, per-cluster capacity, seating-displacement protection</li>
+                    <li>In progress: WhatsApp booking intake parsed by an LLM via serverless functions</li>
+                  </ul>
+                  <div class="project-links">
+                    <a class="btn btn-primary" href="https://megustastu-bookings.vercel.app" target="_blank" rel="noopener">
+                      Open live app
+                      <span class="disc" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="shot">
+                  <div class="chrome" aria-hidden="true">
+                    <i></i><i></i><i></i>
+                    <span class="url">megustastu-bookings.vercel.app</span>
+                  </div>
+                  <img
+                    class="light-only"
+                    src="assets/bookings-timeline-light.webp"
+                    alt="MGT Bookings timeline view: a Gantt-style grid of the day's reservations across 13 tables, with seated and confirmed bookings and a live now-line"
+                    width="1440" height="900" loading="lazy"
+                  />
+                  <img
+                    class="dark-only"
+                    src="assets/bookings-timeline-dark.webp"
+                    alt="MGT Bookings timeline view in dark mode: a Gantt-style grid of the day's reservations across 13 tables"
+                    width="1440" height="900" loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- MGT Scheduling -->
+          <article class="project flip reveal">
+            <div class="project-inner">
+              <div class="project-body">
+                <div class="project-copy">
+                  <span class="badge badge-wip">In development</span>
+                  <h3>MGT Scheduling</h3>
+                  <p class="sub">Sister app · same conventions</p>
+                  <p class="desc">
+                    A staff shift-management and availability app for the same
+                    restaurant: weekly schedule generation, shift templates, and
+                    PDF export. Currently designing a two-role access model
+                    (manager vs. staff) with Firebase custom claims, reusing the
+                    architecture and process discipline established on MGT
+                    Bookings.
+                  </p>
+                  <ul class="stats">
+                    <li>React 19 · Vite</li>
+                    <li>Firebase custom claims</li>
+                    <li>Shared design system</li>
+                  </ul>
+                </div>
+                <div class="shot">
+                  <div class="chrome" aria-hidden="true">
+                    <i></i><i></i><i></i>
+                    <span class="url">MGT — Staff Scheduling</span>
+                  </div>
+                  <img
+                    src="assets/scheduling-dark.webp"
+                    alt="MGT Scheduling: a weekly staff schedule grid with kitchen and front-of-house shifts across seven days"
+                    width="1440" height="900" loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── Skills / how I work ──────────────────────────────────────────── -->
+      <section id="skills">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow reveal">How I work</span>
+            <h2 class="reveal">AI as the engine.<br />Discipline as the guardrails.</h2>
+          </div>
+
+          <figure class="manifesto reveal">
+            <blockquote>
+              I direct AI coding tools to plan, build, and ship real production
+              software, including architecture decisions, data safety, and process
+              discipline. I'm not yet a traditional engineer who writes algorithms
+              unaided (I'm actively building that foundation), but I already have
+              <em>a shipped, live product with real users</em> to show for how I
+              work today.
+            </blockquote>
+            <figcaption>The honest version, and the one that holds up in interviews.</figcaption>
+          </figure>
+
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <h4>
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 6 3.5 10 7 14M13 6l3.5 4L13 14" />
+                  </svg>
+                </span>
+                AI-Native Development
+              </h4>
+              <p>
+                Directing AI coding agents through full build lifecycles (planning,
+                spec-writing, execution, review, iteration) on production codebases,
+                and choosing the right AI tool per task instead of one indiscriminately.
+              </p>
+              <div class="tags">
+                <span>Claude Code</span><span>React 19</span><span>Vite</span>
+                <span>Firebase</span><span>Vercel</span><span>JavaScript / JSX</span>
+                <span>HTML / CSS</span><span>Python (basic)</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <h4>
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 2.8 4 5.4v4.2c0 3.7 2.6 6.4 6 7.6 3.4-1.2 6-3.9 6-7.6V5.4l-6-2.6z" />
+                    <path d="m7.5 9.8 1.8 1.8 3.2-3.4" />
+                  </svg>
+                </span>
+                Engineering Discipline
+              </h4>
+              <p>
+                Software process applied even without hand-coding: version control,
+                semantic versioning, changelog discipline, dev/prod environment
+                separation, and automated structural verification before scaling up
+                AI-assisted sessions.
+              </p>
+              <div class="tags">
+                <span>Git / GitHub</span><span>SemVer</span><span>Changelogs</span>
+                <span>Dev / prod split</span><span>AST verification</span><span>Docs-first</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <h4>
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="10" cy="10" r="7.2" />
+                    <path d="M10 6.5v3.5l2.4 2.4" />
+                  </svg>
+                </span>
+                AI Training &amp; Evaluation
+              </h4>
+              <p>
+                Paid freelance work on the data side of AI (Mercor): rating and
+                evaluating model outputs, Polish-language quality review for training
+                data, and PII-safety screening of AI conversations.
+              </p>
+              <div class="tags">
+                <span>RLHF-style rating</span><span>Linguistic QA</span>
+                <span>PII screening</span><span>Structured review</span>
+              </div>
+            </div>
+
+            <div class="skill-card reveal">
+              <h4>
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 16c0-3.3 2.7-6 6-6s6 2.7 6 6M10 10a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z" />
+                  </svg>
+                </span>
+                Product &amp; Domain
+              </h4>
+              <p>
+                I build tools for friction I live with at work: hospitality
+                operations from both sides of the pass, data modelling for real
+                business constraints, and a visual-arts eye for UI. Fundamentals
+                deepening via The Odin Project.
+              </p>
+              <div class="tags">
+                <span>Hospitality ops</span><span>Data modelling</span>
+                <span>UI / visual design</span><span>The Odin Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Experience ───────────────────────────────────────────────────── -->
+      <section id="experience">
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow reveal">Background</span>
+            <h2 class="reveal">Operational discipline,<br />from 30,000 feet.</h2>
+          </div>
+
+          <div class="xp-grid">
+            <div class="timeline reveal">
+              <ol>
+                <li>
+                  <span class="role">Waiter <span class="org">· Me Gustas Tú, Corralejo</span></span>
+                  <span class="when">Jan 2026 – present</span>
+                  <p class="note">
+                    Front-of-house at the restaurant my apps run in: live, daily
+                    exposure to the exact operational pain points I build for.
+                  </p>
+                </li>
+                <li>
+                  <span class="role">AI Training &amp; Linguistic Quality Reviewer <span class="org">· Mercor, remote</span></span>
+                  <span class="when">2025 – 2026 · freelance, concurrent</span>
+                  <p class="note">
+                    Multiple contracts via a talent marketplace connecting
+                    subject-matter experts with leading AI research labs: rating
+                    model responses, Polish training-data review, PII screening.
+                  </p>
+                </li>
+                <li>
+                  <span class="role">Hotel Manager <span class="org">· Independent Guest House, Cornwall, UK</span></span>
+                  <span class="when">2024 – Dec 2025</span>
+                  <p class="note">
+                    Ran the operation end to end: bookings, guests, and everything
+                    in between.
+                  </p>
+                </li>
+                <li>
+                  <span class="role">Purser / Flight Attendant <span class="org">· LOT Polish Airlines</span></span>
+                  <span class="when">2017 – 2024 · 7 years</span>
+                  <p class="note">
+                    Crew leadership, safety-critical procedure execution, incident
+                    handling, and multicultural service on short- to long-haul
+                    flights.
+                  </p>
+                </li>
+              </ol>
+            </div>
+
+            <div class="aside-stack">
+              <div class="aside-card reveal">
+                <h4>Languages</h4>
+                <div class="lang">
+                  <div>
+                    <div class="row"><span>Polish</span><span class="lvl">Native</span></div>
+                    <div class="bar"><i style="--w: 1"></i></div>
+                  </div>
+                  <div>
+                    <div class="row"><span>English</span><span class="lvl">C1 / C2</span></div>
+                    <div class="bar"><i style="--w: 0.92"></i></div>
+                  </div>
+                  <div>
+                    <div class="row"><span>Spanish</span><span class="lvl">B2 / C1</span></div>
+                    <div class="bar"><i style="--w: 0.78"></i></div>
+                  </div>
+                  <div>
+                    <div class="row"><span>German</span><span class="lvl">A2</span></div>
+                    <div class="bar"><i style="--w: 0.35"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="aside-card reveal">
+                <h4>Education</h4>
+                <p>
+                  Degree in Spanish Studies (Iberística).<br />
+                  Self-directed: The Odin Project (in progress) and “Claude 101”
+                  (AI/LLM fundamentals).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Contact ──────────────────────────────────────────────────────── -->
+      <section id="contact" class="contact">
+        <div class="wrap wrap-narrow">
+          <span class="eyebrow reveal">Contact</span>
+          <h2 class="reveal">Let's build something real.</h2>
+          <p class="lede reveal">
+            Open to AI-native development, AI training &amp; evaluation, and
+            hospitality-tech roles, remote across the EU.
+          </p>
+          <div class="contact-ctas reveal">
+            <button class="btn btn-primary" type="button" id="email-btn">
+              Email me
+              <span class="disc" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3.5" width="12" height="9" rx="2" />
+                  <path d="m2.5 5 5.5 4 5.5-4" />
+                </svg>
+              </span>
+            </button>
+            <a class="btn btn-glass" href="https://github.com/pzzychowicz-blip" target="_blank" rel="noopener">
+              GitHub
+              <span class="disc" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>© 2026 Patryk Zychowicz</span>
+        <span>
+          Designed and built with plain HTML/CSS/JS: directed by me, executed with
+          <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>.
+        </span>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
