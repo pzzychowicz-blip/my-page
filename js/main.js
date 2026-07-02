@@ -100,20 +100,31 @@
     }
   }
 
+  var lbHideTimer = null;
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   function lbOpen(items, index, opener) {
     lbState.items = items;
     lbState.opener = opener;
     lbShow(index);
+    clearTimeout(lbHideTimer);
     lightbox.hidden = false;
+    void lightbox.offsetWidth; // let the hidden->flex switch land, then transition
+    lightbox.classList.add("is-open");
     document.body.classList.add("lb-open");
     lightbox.querySelector(".lb-close").focus();
   }
 
   function lbClose() {
-    lightbox.hidden = true;
-    lbImg.src = "";
+    lightbox.classList.remove("is-open");
     document.body.classList.remove("lb-open");
     if (lbState.opener) lbState.opener.focus();
+    var finish = function () {
+      lightbox.hidden = true;
+      lbImg.src = "";
+    };
+    if (reducedMotion.matches) finish();
+    else lbHideTimer = setTimeout(finish, 380); // matches the opacity transition
   }
 
   lightbox.querySelector(".lb-close").addEventListener("click", lbClose);
