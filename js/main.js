@@ -133,22 +133,38 @@
     var main = gallery.querySelector(".gallery-main");
     var mainLight = main.querySelector("img.light-only");
     var mainDark = main.querySelector("img.dark-only");
+    var strip = gallery.querySelector(".thumbs");
+    var capLabel = gallery.querySelector(".cap-label");
+    var capCount = gallery.querySelector(".cap-count");
     var thumbs = [].slice.call(gallery.querySelectorAll(".thumb"));
     var items = thumbs.map(function (t) {
       return { light: t.dataset.light, dark: t.dataset.dark, alt: t.dataset.alt, label: t.dataset.label };
     });
     var current = 0;
 
+    // edge fades only where there is more strip to scroll to
+    function updateFades() {
+      strip.classList.toggle("at-start", strip.scrollLeft < 10);
+      strip.classList.toggle("at-end", strip.scrollLeft > strip.scrollWidth - strip.clientWidth - 10);
+    }
+    strip.addEventListener("scroll", updateFades, { passive: true });
+    window.addEventListener("resize", updateFades);
+    updateFades();
+
+    function select(i) {
+      current = i;
+      mainLight.src = items[i].light;
+      mainDark.src = items[i].dark;
+      mainLight.alt = items[i].alt;
+      mainDark.alt = items[i].alt;
+      capLabel.textContent = items[i].label;
+      capCount.textContent = (i + 1) + " / " + items.length;
+      thumbs.forEach(function (t, j) { t.classList.toggle("is-active", j === i); });
+      thumbs[i].scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+    }
+
     thumbs.forEach(function (thumb, i) {
-      thumb.addEventListener("click", function () {
-        current = i;
-        mainLight.src = items[i].light;
-        mainDark.src = items[i].dark;
-        mainLight.alt = items[i].alt;
-        mainDark.alt = items[i].alt;
-        thumbs.forEach(function (t) { t.classList.remove("is-active"); });
-        thumb.classList.add("is-active");
-      });
+      thumb.addEventListener("click", function () { select(i); });
     });
 
     main.addEventListener("click", function () {

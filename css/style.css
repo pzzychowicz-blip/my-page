@@ -515,20 +515,81 @@ h2 {
 
 .shot img { border-radius: 12px; width: 100%; height: auto; }
 
+/* the gallery lives in a grid/flex track: without min-width it would
+   grow to fit the filmstrip instead of letting it scroll */
+.gallery { min-width: 0; max-width: 100%; }
+
 /* theme-aware screenshot swap (main shots + thumbnails) */
 .gallery img.dark-only { display: none; }
 [data-theme="dark"] .gallery img.dark-only { display: block; }
 [data-theme="dark"] .gallery img.light-only { display: none; }
 
-/* Thumbnail strip under the main shot */
+/* Caption bar between the main shot and the filmstrip:
+   names the feature on display and where you are in the set. */
+.gallery-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 0 6px;
+}
+
+.gallery-caption .cap-label {
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.gallery-caption .cap-count {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Thumbnail filmstrip under the main shot: one scrollable row,
+   edge fades hint at more content in that direction. */
 .thumbs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  display: flex;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 10px;
+  padding: 4px 6px 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-card) transparent;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+}
+
+.thumbs.at-start {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+
+.thumbs.at-end {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 28px);
+  mask-image: linear-gradient(to right, transparent, #000 28px);
+}
+
+.thumbs.at-start.at-end {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.thumbs::-webkit-scrollbar { height: 5px; }
+.thumbs::-webkit-scrollbar-track { background: transparent; }
+.thumbs::-webkit-scrollbar-thumb {
+  background: var(--border-card);
+  border-radius: 999px;
 }
 
 .thumb {
+  flex: 0 0 122px;
+  scroll-snap-align: start;
   padding: 4px;
   font: inherit;
   border-radius: 12px;

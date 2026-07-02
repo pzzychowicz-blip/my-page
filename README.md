@@ -2,7 +2,7 @@
 
 Personal portfolio of **Patryk Zychowicz** — AI-Native Developer & Product Builder.
 
-**Live:** _(Vercel URL once deployed)_
+**Live:** [pz-my-page.vercel.app](https://pz-my-page.vercel.app/)
 
 ## What this is
 
