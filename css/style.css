@@ -456,7 +456,15 @@ h2 {
   transform: rotate(45deg);
 }
 
-.project-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 28px; }
+
+.project-links .link-note {
+  margin: 0;
+  max-width: 100%;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-faint);
+}
 
 /* Screenshot frame — browser-chrome bezel around the app shot */
 .shot {
