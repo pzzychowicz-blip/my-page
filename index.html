@@ -113,7 +113,7 @@
                 <div class="project-copy">
                   <span class="badge badge-live"><i class="pulse"></i> Live in production</span>
                   <h3>MGT Bookings</h3>
-                  <p class="sub">Sole developer &amp; owner · v15.9.0</p>
+                  <p class="sub">Sole developer &amp; owner · v16</p>
                   <p class="desc">
                     A staff-facing restaurant reservation system in active daily use
                     at a 13-table restaurant in the Canary Islands. Full product
@@ -121,14 +121,14 @@
                     and iterative refactoring.
                   </p>
                   <ul class="stats">
-                    <li>131 commits</li>
-                    <li>4 tagged releases</li>
+                    <li>130+ commits</li>
+                    <li>5+ tagged releases</li>
                     <li>React 19 · Vite</li>
                     <li>Firebase RTDB + Auth</li>
                     <li>Vercel CI/CD</li>
                   </ul>
                   <ul class="highlights">
-                    <li>Diagnosed a production data-loss incident and designed a write-guard pattern to prevent recurrence</li>
+                    <li>Diagnosed two production data-loss incidents, traced them to last-writer-wins clock stamping, and shipped server-enforced compare-and-swap in Firebase security rules, verified by replaying the incident</li>
                     <li>Directed a multi-phase refactor from monolith to modular hooks and components</li>
                     <li>Encoded operational constraints: table-clustering rules, per-cluster capacity, seating-displacement protection</li>
                     <li>In progress: WhatsApp booking intake parsed by an LLM via serverless functions</li>
@@ -169,14 +169,14 @@
                   </button>
                   <div class="gallery-caption">
                     <span class="cap-label">Timeline · the day's service at a glance</span>
-                    <span class="cap-count">1 / 15</span>
+                    <span class="cap-count">1 / 17</span>
                   </div>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
                       data-light="assets/bk-timeline-light.webp"
                       data-dark="assets/bk-timeline-dark.webp"
                       data-label="Timeline · the day's service at a glance"
-                      data-alt="Gantt-style timeline of reservations across 13 tables with a live now-line"
+                      data-alt="Gantt-style timeline of reservations across 13 tables with a live now-line and start-time pills on confirmed bookings"
                       aria-label="Timeline · the day's service at a glance">
                       <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="900" loading="lazy" />
                       <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="900" loading="lazy" />
@@ -220,11 +220,20 @@
                     <button type="button" class="thumb"
                       data-light="assets/bk-new-light.webp"
                       data-dark="assets/bk-new-dark.webp"
-                      data-label="New booking · availability shown as you type"
-                      data-alt="New booking form with live availability summary and table suggestions"
-                      aria-label="New booking · availability shown as you type">
+                      data-label="New booking · phone autocomplete recognises returning guests"
+                      data-alt="New booking form with a phone autocomplete dropdown showing matching guests with visit counts and no-show tags"
+                      aria-label="New booking · phone autocomplete recognises returning guests">
                       <img class="light-only" src="assets/bk-new-light.webp" alt="" width="1440" height="900" loading="lazy" />
                       <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-waitlist-light.webp"
+                      data-dark="assets/bk-waitlist-dark.webp"
+                      data-label="Waitlist · flags when a table frees up"
+                      data-alt="Waitlist panel with waiting parties, each showing a green chip when a table currently fits them"
+                      aria-label="Waitlist · flags when a table frees up">
+                      <img class="light-only" src="assets/bk-waitlist-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-waitlist-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-assign-light.webp"
@@ -288,6 +297,15 @@
                       aria-label="Keyboard shortcuts · the whole app without a mouse">
                       <img class="light-only" src="assets/bk-settings-shortcuts-light.webp" alt="" width="1440" height="900" loading="lazy" />
                       <img class="dark-only" src="assets/bk-settings-shortcuts-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-customers-light.webp"
+                      data-dark="assets/bk-settings-customers-dark.webp"
+                      data-label="Customers · phone-keyed guest history and deletion"
+                      data-alt="Customers settings tab with a guest search, booking history and a delete customer and all data button"
+                      aria-label="Customers · phone-keyed guest history and deletion">
+                      <img class="light-only" src="assets/bk-settings-customers-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-customers-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-whatsapp-light.webp"
