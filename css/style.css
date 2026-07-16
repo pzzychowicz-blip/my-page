@@ -329,13 +329,12 @@ h2 {
 
 .project-body {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
-  align-items: center;
+  align-items: start;
   padding: clamp(28px, 4vw, 52px);
 }
 
-.project.flip .project-body { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 .project.flip .project-copy { order: 2; }
 
 .project h3 {

@@ -113,15 +113,15 @@
                 <div class="project-copy">
                   <span class="badge badge-live"><i class="pulse"></i> Live in production</span>
                   <h3>MGT Bookings</h3>
-                  <p class="sub">Sole developer &amp; owner · v16</p>
+                  <p class="sub">Sole developer &amp; owner · v17</p>
                   <p class="desc">
                     A staff-facing restaurant reservation system in active daily use
-                    at a 13-table restaurant in the Canary Islands. Full product
-                    lifecycle: requirements, data modelling, UI design, deployment,
-                    and iterative refactoring.
+                    at a busy 13-table restaurant. Full product lifecycle:
+                    requirements, data modelling, UI design, deployment, and
+                    iterative refactoring.
                   </p>
                   <ul class="stats">
-                    <li>130+ commits</li>
+                    <li>200+ commits</li>
                     <li>5+ tagged releases</li>
                     <li>React 19 · Vite</li>
                     <li>Firebase RTDB + Auth</li>
@@ -131,22 +131,9 @@
                     <li>Diagnosed two production data-loss incidents, traced them to last-writer-wins clock stamping, and shipped server-enforced compare-and-swap in Firebase security rules, verified by replaying the incident</li>
                     <li>Directed a multi-phase refactor from monolith to modular hooks and components</li>
                     <li>Encoded operational constraints: table-clustering rules, per-cluster capacity, seating-displacement protection</li>
+                    <li>Modelled the physical room as configurable data: a drag-and-drop floor-plan editor in centimetres, rendered as a live top-down Plan view with time-slider occupancy</li>
                     <li>In progress: WhatsApp booking intake parsed by an LLM via serverless functions</li>
                   </ul>
-                  <div class="project-links">
-                    <a class="btn btn-primary" href="https://megustastu-bookings.vercel.app" target="_blank" rel="noopener">
-                      Visit live app
-                      <span class="disc" aria-hidden="true">
-                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
-                        </svg>
-                      </span>
-                    </a>
-                    <p class="link-note">
-                      Behind a staff login: this is the restaurant's production
-                      system, not a demo.
-                    </p>
-                  </div>
                 </div>
                 <div class="gallery">
                   <button class="shot gallery-main" type="button" aria-label="Enlarge screenshot">
@@ -157,38 +144,65 @@
                     <img
                       class="light-only"
                       src="assets/bk-timeline-light.webp"
-                      alt="MGT Bookings timeline view: a Gantt-style grid of the day's reservations across 13 tables, with seated and confirmed bookings and a live now-line"
-                      width="1440" height="900" loading="lazy"
+                      alt="MGT Bookings timeline view: a Gantt-style grid of the day's reservations across 13 tables, with seated and confirmed bookings, a running-late banner and a live now-line"
+                      width="1440" height="1160" loading="lazy"
                     />
                     <img
                       class="dark-only"
                       src="assets/bk-timeline-dark.webp"
                       alt="MGT Bookings timeline view in dark mode: a Gantt-style grid of the day's reservations across 13 tables"
-                      width="1440" height="900" loading="lazy"
+                      width="1440" height="1160" loading="lazy"
                     />
                   </button>
                   <div class="gallery-caption">
                     <span class="cap-label">Timeline · the day's service at a glance</span>
-                    <span class="cap-count">1 / 17</span>
+                    <span class="cap-count">1 / 22</span>
                   </div>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
                       data-light="assets/bk-timeline-light.webp"
                       data-dark="assets/bk-timeline-dark.webp"
                       data-label="Timeline · the day's service at a glance"
-                      data-alt="Gantt-style timeline of reservations across 13 tables with a live now-line and start-time pills on confirmed bookings"
+                      data-alt="Gantt-style timeline of reservations across 13 tables with a live now-line, a running-late banner and start-time pills on confirmed bookings"
                       aria-label="Timeline · the day's service at a glance">
-                      <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="1160" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="1160" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-plan-light.webp"
+                      data-dark="assets/bk-plan-dark.webp"
+                      data-label="Plan view · the room, top-down, with a time slider"
+                      data-alt="Top-down floor plan of the restaurant with tables coloured by occupancy at the current time, a time slider above and walls and a door drawn to scale"
+                      aria-label="Plan view · the room, top-down, with a time slider">
+                      <img class="light-only" src="assets/bk-plan-light.webp" alt="" width="1440" height="1260" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-plan-dark.webp" alt="" width="1440" height="1260" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-drag-light.webp"
+                      data-dark="assets/bk-drag-dark.webp"
+                      data-label="Drag to reassign · move, swap, or displace a table"
+                      data-alt="A booking being dragged mid-flight from one table row to another on the timeline, its target row highlighted and a ghost left in its original slot"
+                      aria-label="Drag to reassign · move, swap, or displace a table">
+                      <img class="light-only" src="assets/bk-drag-light.webp" alt="" width="1440" height="1160" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-drag-dark.webp" alt="" width="1440" height="1160" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-week-light.webp"
                       data-dark="assets/bk-week-dark.webp"
-                      data-label="Week and month summary · covers per day"
-                      data-alt="Week and month summary panel showing covers and booking counts per day"
-                      aria-label="Week and month summary · covers per day">
-                      <img class="light-only" src="assets/bk-week-light.webp" alt="" width="1440" height="900" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-week-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                      data-label="Week summary · covers per day"
+                      data-alt="Week summary panel showing covers and booking counts per day, with today highlighted"
+                      aria-label="Week summary · covers per day">
+                      <img class="light-only" src="assets/bk-week-light.webp" alt="" width="1440" height="1027" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-week-dark.webp" alt="" width="1440" height="1027" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-stats-light.webp"
+                      data-dark="assets/bk-stats-dark.webp"
+                      data-label="Stats · table-turn analytics over a month"
+                      data-alt="Monthly analytics panel with totals for covers, bookings, average party and no-shows, plus busiest-hours and per-table usage bar charts"
+                      aria-label="Stats · table-turn analytics over a month">
+                      <img class="light-only" src="assets/bk-stats-light.webp" alt="" width="1440" height="1027" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-stats-dark.webp" alt="" width="1440" height="1027" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-list-light.webp"
@@ -221,10 +235,19 @@
                       data-light="assets/bk-new-light.webp"
                       data-dark="assets/bk-new-dark.webp"
                       data-label="New booking · phone autocomplete recognises returning guests"
-                      data-alt="New booking form with a phone autocomplete dropdown showing matching guests with visit counts and no-show tags"
+                      data-alt="New booking form with a phone autocomplete dropdown showing matching guests with visit counts, plus a Save-pending option"
                       aria-label="New booking · phone autocomplete recognises returning guests">
                       <img class="light-only" src="assets/bk-new-light.webp" alt="" width="1440" height="900" loading="lazy" />
                       <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="1440" height="900" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-search-light.webp"
+                      data-dark="assets/bk-search-dark.webp"
+                      data-label="Search · find any booking across every date"
+                      data-alt="Global search panel with a query box and result rows matching a guest name across dates, each showing status and party size"
+                      aria-label="Search · find any booking across every date">
+                      <img class="light-only" src="assets/bk-search-light.webp" alt="" width="1440" height="900" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-search-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-waitlist-light.webp"
@@ -281,6 +304,15 @@
                       <img class="dark-only" src="assets/bk-settings-layout-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
+                      data-light="assets/bk-floorplan-light.webp"
+                      data-dark="assets/bk-floorplan-dark.webp"
+                      data-label="Floor-plan editor · arrange the room in centimetres"
+                      data-alt="Floor-plan editor with a Select-move, add-wall and add-door toolbar, a centimetre grid of draggable tables, a door and walls, and room width and height steppers"
+                      aria-label="Floor-plan editor · arrange the room in centimetres">
+                      <img class="light-only" src="assets/bk-floorplan-light.webp" alt="" width="1440" height="1100" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-floorplan-dark.webp" alt="" width="1440" height="1100" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
                       data-light="assets/bk-settings-reminders-light.webp"
                       data-dark="assets/bk-settings-reminders-dark.webp"
                       data-label="Recurring staff reminders"
@@ -325,6 +357,20 @@
                       <img class="light-only" src="assets/bk-simulator-light.webp" alt="" width="1440" height="900" loading="lazy" />
                       <img class="dark-only" src="assets/bk-simulator-dark.webp" alt="" width="1440" height="900" loading="lazy" />
                     </button>
+                  </div>
+                  <div class="project-links">
+                    <a class="btn btn-primary" href="https://megustastu-bookings.vercel.app" target="_blank" rel="noopener">
+                      Visit live app
+                      <span class="disc" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
+                        </svg>
+                      </span>
+                    </a>
+                    <p class="link-note">
+                      Behind a staff login: this is the restaurant's production
+                      system, not a demo.
+                    </p>
                   </div>
                 </div>
               </div>
