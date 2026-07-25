@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="PZ">
+  <defs><linearGradient id="pzbg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="128" y2="128"><stop offset="0" stop-color="#5B21F0"></stop><stop offset="1" stop-color="#12B6E0"></stop></linearGradient></defs>
+  <rect width="128" height="128" rx="28" fill="url(#pzbg)"></rect>
+  <g transform="translate(64 64) scale(0.76) translate(-64 -64)">
+    <path d="M30 102 V26 H64 a19 19 0 0 1 0 38 H92 L50 102 H98" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"></path>
+  </g>
+</svg>
