@@ -203,7 +203,12 @@ h2 {
   border-radius: 10px;
 }
 
-.nav-mark img { width: 30px; height: 30px; border-radius: 9px; }
+/* The mark is a bare gradient glyph (no tile), so no rounding is needed.
+   Two files instead of one so the gradient can lift in dark mode. */
+.nav-mark img { width: 30px; height: 30px; }
+.nav-mark .dark-mark { display: none; }
+[data-theme="dark"] .nav-mark .light-mark { display: none; }
+[data-theme="dark"] .nav-mark .dark-mark { display: block; }
 
 .nav a.link {
   padding: 7px 15px;
