@@ -123,8 +123,9 @@
                     iterative refactoring.
                   </p>
                   <ul class="stats">
-                    <li>200+ commits</li>
-                    <li>5+ tagged releases</li>
+                    <li>700+ commits</li>
+                    <li>17 tagged releases</li>
+                    <li>800+ tests + 120+ rules tests</li>
                     <li>React 19 · Vite</li>
                     <li>Firebase RTDB + Auth</li>
                     <li>Vercel CI/CD</li>
@@ -147,18 +148,18 @@
                       class="light-only"
                       src="assets/bk-timeline-light.webp"
                       alt="MGT Bookings timeline view: a Gantt-style grid of the day's reservations across 13 tables, with seated and confirmed bookings, a notification strip and a live now-line"
-                      width="1440" height="953" loading="lazy"
+                      width="1440" height="941" loading="lazy"
                     />
                     <img
                       class="dark-only"
                       src="assets/bk-timeline-dark.webp"
                       alt="MGT Bookings timeline view in dark mode: a Gantt-style grid of the day's reservations across 13 tables"
-                      width="1440" height="953" loading="lazy"
+                      width="1440" height="941" loading="lazy"
                     />
                   </button>
                   <div class="gallery-caption">
                     <span class="cap-label">Timeline · the day's service at a glance</span>
-                    <span class="cap-count">1 / 31</span>
+                    <span class="cap-count">1 / 34</span>
                   </div>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
@@ -167,8 +168,8 @@
                       data-label="Timeline · the day's service at a glance"
                       data-alt="Gantt-style timeline of reservations across 13 tables, zoomed so every confirmed booking carries its start-time pill, with a live now-line, seated blocks in green, a pending request in yellow, waitlist ghosts and a blocked table"
                       aria-label="Timeline · the day's service at a glance">
-                      <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="953" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="953" loading="lazy" />
+                      <img class="light-only" src="assets/bk-timeline-light.webp" alt="" width="1440" height="941" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-timeline-dark.webp" alt="" width="1440" height="941" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-turnaround-light.webp"
@@ -180,10 +181,19 @@
                       <img class="dark-only" src="assets/bk-turnaround-dark.webp" alt="" width="1440" height="376" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
+                      data-light="assets/bk-clash-light.webp"
+                      data-dark="assets/bk-clash-dark.webp"
+                      data-label="Double-booked · the clash the grid draws on itself"
+                      data-alt="Two bookings pinned to the same table: both blocks outlined in danger red, a stripe across only the minutes the two of them both claim, and a double-booked marker in each block&#39;s icon rail"
+                      aria-label="Double-booked · the clash the grid draws on itself">
+                      <img class="light-only" src="assets/bk-clash-light.webp" alt="" width="668" height="164" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-clash-dark.webp" alt="" width="668" height="164" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
                       data-light="assets/bk-notify-light.webp"
                       data-dark="assets/bk-notify-dark.webp"
                       data-label="Notifications · every alert in one strip"
-                      data-alt="The expanded notification strip listing a running-late party and two waiting parties with a table free, each with its own action buttons"
+                      data-alt="The expanded notification strip listing three sections — a reshuffle suggestion, a running-late party, and two waiting parties whose table is free — each row carrying its own action buttons"
                       aria-label="Notifications · every alert in one strip">
                       <img class="light-only" src="assets/bk-notify-light.webp" alt="" width="1328" height="533" loading="lazy" />
                       <img class="dark-only" src="assets/bk-notify-dark.webp" alt="" width="1328" height="533" loading="lazy" />
@@ -192,7 +202,7 @@
                       data-light="assets/bk-presence-light.webp"
                       data-dark="assets/bk-presence-dark.webp"
                       data-label="Connection · live database state and other devices"
-                      data-alt="Connection popover showing the Realtime Database is connected, who is signed in, and the other devices currently in the app"
+                      data-alt="Connection popover: a green Connected state reading &quot;Connected to the server&quot;, a Log out button, the signed-in account and two connected devices each labelled Mac · Chrome · just now, with one marked This device — the account addresses are blurred"
                       aria-label="Connection · live database state and other devices">
                       <img class="light-only" src="assets/bk-presence-light.webp" alt="" width="374" height="312" loading="lazy" />
                       <img class="dark-only" src="assets/bk-presence-dark.webp" alt="" width="374" height="312" loading="lazy" />
@@ -203,8 +213,8 @@
                       data-label="Plan view · the room, top-down, scrubbed by a time ruler"
                       data-alt="Top-down floor plan of the restaurant with tables coloured by occupancy at the selected time, a tape-measure time ruler above showing where the rush falls, and walls and a door drawn to scale"
                       aria-label="Plan view · the room, top-down, scrubbed by a time ruler">
-                      <img class="light-only" src="assets/bk-plan-light.webp" alt="" width="1440" height="1352" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-plan-dark.webp" alt="" width="1440" height="1352" loading="lazy" />
+                      <img class="light-only" src="assets/bk-plan-light.webp" alt="" width="1440" height="1340" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-plan-dark.webp" alt="" width="1440" height="1340" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-drag-light.webp"
@@ -212,8 +222,17 @@
                       data-label="Drag to reassign · move, swap, or displace a table"
                       data-alt="A booking being dragged mid-flight from one table row to another on the timeline, its target row highlighted and a ghost left in its original slot"
                       aria-label="Drag to reassign · move, swap, or displace a table">
-                      <img class="light-only" src="assets/bk-drag-light.webp" alt="" width="1440" height="964" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-drag-dark.webp" alt="" width="1440" height="964" loading="lazy" />
+                      <img class="light-only" src="assets/bk-drag-light.webp" alt="" width="1440" height="952" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-drag-dark.webp" alt="" width="1440" height="952" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-status-light.webp"
+                      data-dark="assets/bk-status-dark.webp"
+                      data-label="Hold to change status · seated, completed, no-show"
+                      data-alt="The quick-status popup over a booking, each status carrying its own mark — Seated, Completed, Cancelled, and the one-tap No show a party already past its time earns"
+                      aria-label="Hold to change status · seated, completed, no-show">
+                      <img class="light-only" src="assets/bk-status-light.webp" alt="" width="466" height="274" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-status-dark.webp" alt="" width="466" height="274" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-week-light.webp"
@@ -221,8 +240,8 @@
                       data-label="Week summary · covers per day"
                       data-alt="Week summary panel showing covers and booking counts per day, with today highlighted"
                       aria-label="Week summary · covers per day">
-                      <img class="light-only" src="assets/bk-week-light.webp" alt="" width="1440" height="1060" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-week-dark.webp" alt="" width="1440" height="1060" loading="lazy" />
+                      <img class="light-only" src="assets/bk-week-light.webp" alt="" width="652" height="701" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-week-dark.webp" alt="" width="652" height="701" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-stats-light.webp"
@@ -230,8 +249,8 @@
                       data-label="Stats · table-turn analytics over a month"
                       data-alt="Monthly analytics panel with totals for covers, bookings, average party and no-shows, plus busiest-hours and per-table usage bar charts"
                       aria-label="Stats · table-turn analytics over a month">
-                      <img class="light-only" src="assets/bk-stats-light.webp" alt="" width="1440" height="1060" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-stats-dark.webp" alt="" width="1440" height="1060" loading="lazy" />
+                      <img class="light-only" src="assets/bk-stats-light.webp" alt="" width="652" height="758" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-stats-dark.webp" alt="" width="652" height="758" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-list-light.webp"
@@ -246,7 +265,7 @@
                       data-light="assets/bk-split-light.webp"
                       data-dark="assets/bk-split-dark.webp"
                       data-label="Split View · two views at once, side by side"
-                      data-alt="Split View with the timeline and the booking list side by side in two independently scrolling panes, corner brackets marking the focused pane and a draggable divider between them"
+                      data-alt="Split View with the booking list and the top-down floor plan side by side in two independently scrolling panes, corner brackets marking the focused pane and a draggable divider between them"
                       aria-label="Split View · two views at once, side by side">
                       <img class="light-only" src="assets/bk-split-light.webp" alt="" width="1440" height="1180" loading="lazy" />
                       <img class="dark-only" src="assets/bk-split-dark.webp" alt="" width="1440" height="1180" loading="lazy" />
@@ -266,8 +285,8 @@
                       data-label="Booking editor · status, tables, duration"
                       data-alt="Edit booking modal with status buttons, table assignment and duration stepper"
                       aria-label="Booking editor · status, tables, duration">
-                      <img class="light-only" src="assets/bk-edit-light.webp" alt="" width="660" height="1041" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-edit-dark.webp" alt="" width="660" height="1041" loading="lazy" />
+                      <img class="light-only" src="assets/bk-edit-light.webp" alt="" width="660" height="1040" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-edit-dark.webp" alt="" width="660" height="1039" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-guard-light.webp"
@@ -284,17 +303,17 @@
                       data-label="Undo · deletes, edits and cancellations are reversible"
                       data-alt="A toast reading Booking deleted with an Undo button, over the list view"
                       aria-label="Undo · deletes, edits and cancellations are reversible">
-                      <img class="light-only" src="assets/bk-undo-light.webp" alt="" width="1440" height="1120" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-undo-dark.webp" alt="" width="1440" height="1120" loading="lazy" />
+                      <img class="light-only" src="assets/bk-undo-light.webp" alt="" width="505" height="346" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-undo-dark.webp" alt="" width="505" height="346" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-history-light.webp"
                       data-dark="assets/bk-history-dark.webp"
                       data-label="Booking history · a full audit trail"
-                      data-alt="Booking history popup listing every change with author and timestamp"
+                      data-alt="Booking history popup for one booking, newest first: an edit saved with no field changes, an edit showing the field diff time 15:00→14:00, tables manually assigned to 5B, and the original creation — each with its timestamp and the acting account, which is blurred here"
                       aria-label="Booking history · a full audit trail">
-                      <img class="light-only" src="assets/bk-history-light.webp" alt="" width="660" height="309" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-history-dark.webp" alt="" width="660" height="309" loading="lazy" />
+                      <img class="light-only" src="assets/bk-history-light.webp" alt="" width="660" height="444" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-history-dark.webp" alt="" width="660" height="444" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-new-light.webp"
@@ -302,8 +321,8 @@
                       data-label="New booking · phone autocomplete recognises returning guests"
                       data-alt="New booking form with a phone autocomplete dropdown showing matching guests with visit counts, plus a Save-pending option"
                       aria-label="New booking · phone autocomplete recognises returning guests">
-                      <img class="light-only" src="assets/bk-new-light.webp" alt="" width="660" height="1159" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="660" height="1159" loading="lazy" />
+                      <img class="light-only" src="assets/bk-new-light.webp" alt="" width="660" height="926" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="660" height="926" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-dupphone-light.webp"
@@ -311,8 +330,8 @@
                       data-label="Double-booking warning · same phone, overlapping time"
                       data-alt="A booking form showing an amber advisory that this phone number already has an overlapping booking tonight, listing its time range, party size and table"
                       aria-label="Double-booking warning · same phone, overlapping time">
-                      <img class="light-only" src="assets/bk-dupphone-light.webp" alt="" width="652" height="1052" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-dupphone-dark.webp" alt="" width="652" height="1052" loading="lazy" />
+                      <img class="light-only" src="assets/bk-dupphone-light.webp" alt="" width="640" height="247" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-dupphone-dark.webp" alt="" width="640" height="247" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-search-light.webp"
@@ -338,8 +357,8 @@
                       data-label="Waitlist ghosts · where a waiting party would fit"
                       data-alt="The whole service in one frame, with waiting parties projected onto the grid as pale ghost blocks on the tables and times they could actually be seated at"
                       aria-label="Waitlist ghosts · where a waiting party would fit">
-                      <img class="light-only" src="assets/bk-ghost-light.webp" alt="" width="1440" height="953" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-ghost-dark.webp" alt="" width="1440" height="953" loading="lazy" />
+                      <img class="light-only" src="assets/bk-ghost-light.webp" alt="" width="1440" height="941" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-ghost-dark.webp" alt="" width="1440" height="941" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-assign-light.webp"
@@ -365,17 +384,26 @@
                       data-label="Table blocking · take a table out of service"
                       data-alt="Block table modal with a from-to time range"
                       aria-label="Table blocking · take a table out of service">
-                      <img class="light-only" src="assets/bk-block-light.webp" alt="" width="660" height="375" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-block-dark.webp" alt="" width="660" height="375" loading="lazy" />
+                      <img class="light-only" src="assets/bk-block-light.webp" alt="" width="660" height="362" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-block-dark.webp" alt="" width="660" height="362" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-settings-general-light.webp"
                       data-dark="assets/bk-settings-general-dark.webp"
-                      data-label="Settings · every behaviour is per-device and opt-in"
-                      data-alt="General settings tab showing per-device controls: dark mode, app width, reduce animations, plan zoom and pan, lock navigation, split view, and timeline zoom behaviour"
-                      aria-label="Settings · every behaviour is per-device and opt-in">
+                      data-label="Settings · the restaurant's rules, shared by every device"
+                      data-alt="The General settings tab, headed &quot;These are the restaurant's settings — shared by everyone, on every device&quot;: opening hours, an afternoon/evening shift split, the auto-optimiser's daily cutoff, booking durations per party size, separation between bookings, running-late thresholds and overlap warnings"
+                      aria-label="Settings · the restaurant's rules, shared by every device">
                       <img class="light-only" src="assets/bk-settings-general-light.webp" alt="" width="652" height="1188" loading="lazy" />
                       <img class="dark-only" src="assets/bk-settings-general-dark.webp" alt="" width="652" height="1188" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-settings-app-light.webp"
+                      data-dark="assets/bk-settings-app-dark.webp"
+                      data-label="App settings · dark mode, width, motion, offline"
+                      data-alt="The App settings tab — dark mode, app width, reduce animations, work offline, plan zoom and pan, lock navigation, split view, and four timeline-zoom defaults; headed &quot;Settings follow your account on every device, except where noted&quot;"
+                      aria-label="App settings · dark mode, width, motion, offline">
+                      <img class="light-only" src="assets/bk-settings-app-light.webp" alt="" width="652" height="1062" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-app-dark.webp" alt="" width="652" height="1062" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-settings-layout-light.webp"
@@ -401,8 +429,8 @@
                       data-label="Recurring staff reminders"
                       data-alt="Reminders settings tab with recurring weekly staff reminders"
                       aria-label="Recurring staff reminders">
-                      <img class="light-only" src="assets/bk-settings-reminders-light.webp" alt="" width="652" height="901" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-settings-reminders-dark.webp" alt="" width="652" height="901" loading="lazy" />
+                      <img class="light-only" src="assets/bk-settings-reminders-light.webp" alt="" width="652" height="668" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-settings-reminders-dark.webp" alt="" width="652" height="668" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-settings-shortcuts-light.webp"
@@ -428,8 +456,8 @@
                       data-label="WhatsApp inbox · LLM-parsed booking intake (in progress)"
                       data-alt="WhatsApp inbox with a regular customer's conversation open: a confirmed linked booking with open and cancel actions, an LLM-parsed change request banner with an apply-changes action, and the message thread"
                       aria-label="WhatsApp inbox · LLM-parsed booking intake (in progress)">
-                      <img class="light-only" src="assets/bk-whatsapp-light.webp" alt="" width="1440" height="1200" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-whatsapp-dark.webp" alt="" width="1440" height="1200" loading="lazy" />
+                      <img class="light-only" src="assets/bk-whatsapp-light.webp" alt="" width="1440" height="1000" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-whatsapp-dark.webp" alt="" width="1440" height="1000" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-simulator-light.webp"
