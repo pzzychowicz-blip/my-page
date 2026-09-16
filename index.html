@@ -135,7 +135,10 @@
                     <li>Directed a multi-phase refactor from monolith to modular hooks and components</li>
                     <li>Encoded operational constraints: table-clustering rules, per-cluster capacity, seating-displacement protection</li>
                     <li>Modelled the physical room as configurable data: a drag-and-drop floor-plan editor in centimetres, rendered as a live top-down Plan view with a scrubbable time ruler</li>
-                    <li>In progress: WhatsApp booking intake parsed by an LLM via serverless functions</li>
+                    <li>Designed staff / manager / admin roles with per-person capability overrides, enforced in Firebase security rules as well as in the UI, with a last-admin lockout guard</li>
+                    <li>Built a gift-voucher ledger: manual or generated codes that are never reused, partial redemptions, balances that follow the guest to their next booking, and reversals that leave a record</li>
+                    <li>Added an admin activity log of every change, with no names stored in log text so a customer's data erasure also erases them from the log</li>
+                    <li>Shipped WhatsApp booking intake parsed by an LLM via serverless functions, behind an admin module switch, with the test simulator stripped from production builds</li>
                   </ul>
                 </div>
                 <div class="gallery">
