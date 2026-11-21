@@ -123,9 +123,9 @@
                     iterative refactoring.
                   </p>
                   <ul class="stats">
-                    <li>1,750+ commits</li>
+                    <li>1,800+ commits</li>
                     <li>24 tagged releases</li>
-                    <li>4,600+ tests + 310+ rules tests</li>
+                    <li>4,800+ tests + 310+ rules tests</li>
                     <li>React 19 · Vite</li>
                     <li>Firebase RTDB + Auth</li>
                     <li>Vercel CI/CD</li>
@@ -144,6 +144,7 @@
                     <li>Made the restaurant's time zone a setting: every clock in the app reads through one module, and a device in another zone shows the restaurant's time and says so</li>
                     <li>Added crash reporting into the activity log: every uncaught error leaves one entry, admins see new crashes from the header, and a crash's stack can be rebuilt on demand</li>
                     <li>Ran a touch and accessibility pass: 4.5:1 contrast on every button, 28px tap targets, larger text, a compact tablet layout, pull to refresh and undo on every move</li>
+                    <li>Taught the optimiser to give each party in a swap only the tables it needs and to check every day ahead, opened the day summary with every note and tag in time order, and wrote a hover description for every control</li>
                     <li>Shipped WhatsApp booking intake parsed by an LLM via serverless functions, with photos, voice notes and PDFs, a monthly cost counter, and the restaurant's WhatsApp Business app sharing the same number; behind an admin module switch, with the test simulator stripped from production builds; a moved booking drafts the guest's reply, the 24-hour reply window is shown in its last four hours, automatic drafts are capped per number, and a customer's words are never treated as instructions</li>
                   </ul>
                 </div>
@@ -168,7 +169,7 @@
                   </button>
                   <div class="gallery-caption">
                     <span class="cap-label">Timeline · the day's service at a glance</span>
-                    <span class="cap-count">1 / 71</span>
+                    <span class="cap-count">1 / 75</span>
                   </div>
                   <div class="thumbs">
                     <button type="button" class="thumb is-active"
@@ -211,37 +212,37 @@
                       data-light="assets/bk-notify-light.webp"
                       data-dark="assets/bk-notify-dark.webp"
                       data-label="Notifications · every alert in one strip"
-                      data-alt="The expanded notification strip listing three sections: a reshuffle suggestion, a running-late party, and a waiting party whose table is free, each row with its own actions"
+                      data-alt="The expanded notification strip listing two sections: a running-late party with a No show button, and two waiting parties whose table is free, each with Book"
                       aria-label="Notifications · every alert in one strip">
-                      <img class="light-only" src="assets/bk-notify-light.webp" alt="" width="1328" height="533" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-notify-dark.webp" alt="" width="1328" height="533" loading="lazy" />
+                      <img class="light-only" src="assets/bk-notify-light.webp" alt="" width="1440" height="453" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-notify-dark.webp" alt="" width="1440" height="453" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-reassign-light.webp"
                       data-dark="assets/bk-reassign-dark.webp"
                       data-label="Reassign refused · and the reason why"
-                      data-alt="The notification strip open on Overlap warnings: Ariadna Puig, still seated, overstaying into Dario Estévez&#39;s 21:45 on table 1, with a Reassign Dario Estévez button and the running-late parties below; a toast over the timeline reads No alternative tables available for Dario Estévez at 21:45"
+                      data-alt="The notification strip open on Overlap warnings: Ariadna Puig, still seated, overstaying into Yara Domínguez&#39;s 21:30 on table 1, with a Reassign Yara Domínguez button and the running-late parties below; a toast over the timeline reads No alternative tables available for Yara Domínguez at 21:30, and Yara is also drawn in the Unplaced row"
                       aria-label="Reassign refused · and the reason why">
-                      <img class="light-only" src="assets/bk-reassign-light.webp" alt="" width="1440" height="759" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-reassign-dark.webp" alt="" width="1440" height="759" loading="lazy" />
+                      <img class="light-only" src="assets/bk-reassign-light.webp" alt="" width="1440" height="672" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-reassign-dark.webp" alt="" width="1440" height="672" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-presence-light.webp"
                       data-dark="assets/bk-presence-dark.webp"
                       data-label="Connection · live database state and other devices"
-                      data-alt="Connection popover: a green Connected state reading &quot;Connected to the server&quot;, a Log out button, the signed-in account, and two connected devices: a Mac on Chrome marked This device and another Mac on Chrome; the account addresses are blurred"
+                      data-alt="Connection popover: a green Connected state reading &quot;Connected to the server&quot;, a Log out button, the signed-in account, and one connected device: a Mac on Chrome marked This device; the account addresses are blurred"
                       aria-label="Connection · live database state and other devices">
-                      <img class="light-only" src="assets/bk-presence-light.webp" alt="" width="348" height="286" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-presence-dark.webp" alt="" width="348" height="286" loading="lazy" />
+                      <img class="light-only" src="assets/bk-presence-light.webp" alt="" width="333" height="252" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-presence-dark.webp" alt="" width="333" height="252" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-parked-light.webp"
                       data-dark="assets/bk-parked-dark.webp"
                       data-label="Couldn't save · a refused change is kept, with Retry or Discard"
-                      data-alt="The notification strip open on a red Couldn't save row naming the change it is holding (Petra Lang, 21:45 and 1 other, not saved and undone), with Retry and Discard, above the reshuffle, running-late and waitlist rows"
+                      data-alt="The notification strip open on a red Couldn't save row naming the change it is holding (Petra Lang, 21:45, not saved and undone), with Retry and Discard, above the reshuffle, running-late and waitlist rows"
                       aria-label="Couldn't save · a refused change is kept, with Retry or Discard">
-                      <img class="light-only" src="assets/bk-parked-light.webp" alt="" width="1328" height="459" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-parked-dark.webp" alt="" width="1328" height="459" loading="lazy" />
+                      <img class="light-only" src="assets/bk-parked-light.webp" alt="" width="1440" height="379" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-parked-dark.webp" alt="" width="1440" height="379" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-refresh-light.webp"
@@ -256,10 +257,10 @@
                       data-light="assets/bk-plan-light.webp"
                       data-dark="assets/bk-plan-dark.webp"
                       data-label="Plan view · the room at any minute, and how long each table stays free"
-                      data-alt="Top-down floor plan at 20:30 with tables coloured by status, seated in green, confirmed in orange and pending in yellow; free tables read until 21:00 or until 21:45, outlined in dashed amber where the gap is too short for a walk-in; a time ruler above shows where the rush falls, with walls and a door drawn to scale"
+                      data-alt="Top-down floor plan at 20:30 with tables coloured by status, seated in green, confirmed in orange and pending in yellow; free tables 7 and 8 read until 21:00, outlined in dashed amber where the gap is too short for a walk-in; a time ruler above shows where the rush falls, with walls and a door drawn to scale"
                       aria-label="Plan view · the room at any minute, and how long each table stays free">
-                      <img class="light-only" src="assets/bk-plan-light.webp" alt="" width="1440" height="1352" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-plan-dark.webp" alt="" width="1440" height="1352" loading="lazy" />
+                      <img class="light-only" src="assets/bk-plan-light.webp" alt="" width="1440" height="1452" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-plan-dark.webp" alt="" width="1440" height="1452" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-drag-light.webp"
@@ -269,6 +270,15 @@
                       aria-label="Drag to reassign · move, swap, or displace a table">
                       <img class="light-only" src="assets/bk-drag-light.webp" alt="" width="1440" height="220" loading="lazy" />
                       <img class="dark-only" src="assets/bk-drag-dark.webp" alt="" width="1440" height="220" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-swap-light.webp"
+                      data-dark="assets/bk-swap-dark.webp"
+                      data-label="Swap · each party gets only the tables it needs"
+                      data-alt="Noel Cabrera, a party of 1, dropped onto Seba Moreno's table at 19:00: a toast reads Noel Cabrera and Seba Moreno — tables swapped, with Undo; Noel now sits on table 6, Seba's 4 on table 9, and table 7 is left free instead of following Noel"
+                      aria-label="Swap · each party gets only the tables it needs">
+                      <img class="light-only" src="assets/bk-swap-light.webp" alt="" width="1440" height="953" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-swap-dark.webp" alt="" width="1440" height="953" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-retime-light.webp"
@@ -283,16 +293,16 @@
                       data-light="assets/bk-undo-move-light.webp"
                       data-dark="assets/bk-undo-move-dark.webp"
                       data-label="Undo a move · and see who else it moved"
-                      data-alt="The timeline after a drop, with a toast reading Clara Vidal moved to 11, Nils Bauer and 4 others moved, and an Undo button"
+                      data-alt="A band of the timeline after a drop, with a toast reading Clara Vidal moved to 7 — Nils Bauer moved, and an Undo button"
                       aria-label="Undo a move · and see who else it moved">
-                      <img class="light-only" src="assets/bk-undo-move-light.webp" alt="" width="1440" height="953" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-undo-move-dark.webp" alt="" width="1440" height="953" loading="lazy" />
+                      <img class="light-only" src="assets/bk-undo-move-light.webp" alt="" width="1440" height="470" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-undo-move-dark.webp" alt="" width="1440" height="470" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-cell-light.webp"
                       data-dark="assets/bk-cell-dark.webp"
                       data-label="Tap an empty cell · start a booking right there"
-                      data-alt="A few timeline rows with an empty quarter-hour on table 8 lit, and a marker reading 8 · 21:30: the table and time the new booking will open with"
+                      data-alt="A few timeline rows with an empty quarter-hour on table 6 lit, and a marker reading 6 · 21:30: the table and time the new booking will open with"
                       aria-label="Tap an empty cell · start a booking right there">
                       <img class="light-only" src="assets/bk-cell-light.webp" alt="" width="1440" height="396" loading="lazy" />
                       <img class="dark-only" src="assets/bk-cell-dark.webp" alt="" width="1440" height="396" loading="lazy" />
@@ -325,6 +335,15 @@
                       <img class="dark-only" src="assets/bk-reshuffle-unlock-dark.webp" alt="" width="1440" height="649" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
+                      data-light="assets/bk-reshuffle-later-light.webp"
+                      data-dark="assets/bk-reshuffle-later-dark.webp"
+                      data-label="Reshuffle ahead · a better seating found for a later day"
+                      data-alt="Thursday 10 December's lunch, days ahead of today: Nuria Soler, 3 guests at 15:00, sits on the joined tables 4 and 5 while table 9 stays empty, and the Reshuffle button has turned orange because the check found a better seating"
+                      aria-label="Reshuffle ahead · a better seating found for a later day">
+                      <img class="light-only" src="assets/bk-reshuffle-later-light.webp" alt="" width="1440" height="953" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-reshuffle-later-dark.webp" alt="" width="1440" height="953" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
                       data-light="assets/bk-seatclash-light.webp"
                       data-dark="assets/bk-seatclash-dark.webp"
                       data-label="Seat check · the table is still occupied"
@@ -337,7 +356,7 @@
                       data-light="assets/bk-seatnote-light.webp"
                       data-dark="assets/bk-seatnote-dark.webp"
                       data-label="Seat note · a party's notes when they sit down"
-                      data-alt="A popover for Clara Vidal, 2 guests at 21:30 on table 4, with her VIP and Anniversary tags, her notes (a nut allergy the kitchen knows about, an anniversary dessert with a candle) and a Done button"
+                      data-alt="A popover for Clara Vidal, 2 guests at 21:30 on table 3, with her VIP and Anniversary tags, her notes (a nut allergy the kitchen knows about, an anniversary dessert with a candle) and a Done button"
                       aria-label="Seat note · a party's notes when they sit down">
                       <img class="light-only" src="assets/bk-seatnote-light.webp" alt="" width="676" height="390" loading="lazy" />
                       <img class="dark-only" src="assets/bk-seatnote-dark.webp" alt="" width="676" height="390" loading="lazy" />
@@ -346,16 +365,25 @@
                       data-light="assets/bk-summary-light.webp"
                       data-dark="assets/bk-summary-dark.webp"
                       data-label="Day summary · covers by shift and by hour"
-                      data-alt="The day's summary unfolded under the header: 34 covers from 13 bookings, split into afternoon (4 covers) and evening (30 covers), covers per hour as bars, and deposits held and forfeited, with Hours for this day, Print and More"
+                      data-alt="The day's summary unfolded under the header: Notes (4) first, each booking's tags and notes in time order, then 34 covers from 13 bookings split into afternoon (4) and evening (30), covers per hour as bars, and deposits held and forfeited, with Hours for this day, Print and More"
                       aria-label="Day summary · covers by shift and by hour">
-                      <img class="light-only" src="assets/bk-summary-light.webp" alt="" width="1292" height="330" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-summary-dark.webp" alt="" width="1292" height="330" loading="lazy" />
+                      <img class="light-only" src="assets/bk-summary-light.webp" alt="" width="1420" height="553" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-summary-dark.webp" alt="" width="1420" height="553" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-notes-light.webp"
+                      data-dark="assets/bk-notes-dark.webp"
+                      data-label="Day notes · every note and tag before service"
+                      data-alt="The summary's Notes (8) for Saturday 12 December, one row per booking in time order with its party size and tables: Anniversary — Table by the window, please; Gluten-free — Two coeliacs at the table; Needs a high chair; Birthday — bringing their own cake; Vegan; VIP — send a glass of cava; Terrace if the heaters are on; and Allergy, Vegetarian with a shellfish allergy and a late arrival from the airport"
+                      aria-label="Day notes · every note and tag before service">
+                      <img class="light-only" src="assets/bk-notes-light.webp" alt="" width="1418" height="498" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-notes-dark.webp" alt="" width="1418" height="498" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-tablet-light.webp"
                       data-dark="assets/bk-tablet-dark.webp"
                       data-label="Tablet layout · compact on a short screen"
-                      data-alt="The app on a tablet in landscape: the header folded into two rows, with zoom and Follow beside the restaurant name, and the day summary open underneath (afternoon and evening covers, covers per hour, deposits, Optimiser, Reshuffle, Hours for this day, Print and More)"
+                      data-alt="The app on a tablet in landscape: the header folded into two rows, with Follow and zoom first, then Timeline, List and Plan, above the evening's grid with every booking's start time"
                       aria-label="Tablet layout · compact on a short screen">
                       <img class="light-only" src="assets/bk-tablet-light.webp" alt="" width="1440" height="731" loading="lazy" />
                       <img class="dark-only" src="assets/bk-tablet-dark.webp" alt="" width="1440" height="731" loading="lazy" />
@@ -418,7 +446,7 @@
                       data-light="assets/bk-edit-light.webp"
                       data-dark="assets/bk-edit-dark.webp"
                       data-label="Booking editor · status, tables, tags and occasion"
-                      data-alt="Edit booking for Lucía García, a regular with 5 past visits: date, time, seating, guests, duration, tables, status buttons, notes, guest tags with Allergy ticked, occasion with Birthday ticked, a deposit and a gift-voucher field"
+                      data-alt="Edit booking for Lucía García, a regular with 8 past visits: date, time, seating, guests, duration, tables, status buttons, notes, guest tags with Allergy ticked, occasion with Birthday ticked, a deposit and a gift-voucher field"
                       aria-label="Booking editor · status, tables, tags and occasion">
                       <img class="light-only" src="assets/bk-edit-light.webp" alt="" width="660" height="1160" loading="lazy" />
                       <img class="dark-only" src="assets/bk-edit-dark.webp" alt="" width="660" height="1160" loading="lazy" />
@@ -436,10 +464,10 @@
                       data-light="assets/bk-carry-light.webp"
                       data-dark="assets/bk-carry-dark.webp"
                       data-label="Voucher balance · offered to the guest's next booking"
-                      data-alt="A dialog asking whether to move the 47.7 € left on voucher 5C7Z-WJ3P to Laura Vidal&#39;s booking on Fri 11.12 at 20:00, with Not now and Move it"
+                      data-alt="A dialog asking whether to move the 47.7 € left on voucher 5C7Z-WJ3P to Laura Vidal&#39;s booking on Fri 18.12 at 20:00, with Not now and Move it"
                       aria-label="Voucher balance · offered to the guest's next booking">
-                      <img class="light-only" src="assets/bk-carry-light.webp" alt="" width="668" height="298" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-carry-dark.webp" alt="" width="668" height="298" loading="lazy" />
+                      <img class="light-only" src="assets/bk-carry-light.webp" alt="" width="668" height="315" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-carry-dark.webp" alt="" width="668" height="315" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-guard-light.webp"
@@ -463,7 +491,7 @@
                       data-light="assets/bk-history-light.webp"
                       data-dark="assets/bk-history-dark.webp"
                       data-label="Booking history · a full audit trail"
-                      data-alt="Booking history for Bruno Sala on Thu 03.12 at 14:15, newest first: notes updated, party size 3→4, time 14:30→14:15, and the original creation, each with its timestamp and the acting account, which is blurred"
+                      data-alt="Booking history for Bruno Sala on Thu 10.12 at 14:15, newest first: notes updated, party size 3→4, time 14:30→14:15, and the original creation, each with its timestamp and the acting account, which is blurred"
                       aria-label="Booking history · a full audit trail">
                       <img class="light-only" src="assets/bk-history-light.webp" alt="" width="660" height="444" loading="lazy" />
                       <img class="dark-only" src="assets/bk-history-dark.webp" alt="" width="660" height="444" loading="lazy" />
@@ -472,7 +500,7 @@
                       data-light="assets/bk-new-light.webp"
                       data-dark="assets/bk-new-dark.webp"
                       data-label="New booking · phone autocomplete recognises returning guests"
-                      data-alt="New booking form with the phone autocomplete recognising a returning guest, Lucía García, 5 visits, plus guest and occasion tags, a Repeat weekly switch and a Save pending button"
+                      data-alt="New booking form with the phone autocomplete recognising a returning guest, Lucía García, 8 visits, plus guest and occasion tags, a Repeat weekly switch and a Save pending button"
                       aria-label="New booking · phone autocomplete recognises returning guests">
                       <img class="light-only" src="assets/bk-new-light.webp" alt="" width="660" height="1160" loading="lazy" />
                       <img class="dark-only" src="assets/bk-new-dark.webp" alt="" width="660" height="1160" loading="lazy" />
@@ -481,7 +509,7 @@
                       data-light="assets/bk-availability-light.webp"
                       data-dark="assets/bk-availability-dark.webp"
                       data-label="Availability · the nearest times that do fit"
-                      data-alt="A new booking for Familia Ortega, 8 guests on Sat 05.12 at 21:00; a red line along the Save bar reads No table for 8 at 21:00 and offers 19:00, 19:15, 19:30 and 19:45, plus Add to waitlist"
+                      data-alt="A new booking for Familia Ortega, 8 guests on Sat 12.12 at 21:00; a red line along the Save bar reads No table for 8 at 21:00 and offers 19:00, 19:15, 19:30 and 19:45, plus Add to waitlist"
                       aria-label="Availability · the nearest times that do fit">
                       <img class="light-only" src="assets/bk-availability-light.webp" alt="" width="660" height="1142" loading="lazy" />
                       <img class="dark-only" src="assets/bk-availability-dark.webp" alt="" width="660" height="1142" loading="lazy" />
@@ -501,8 +529,17 @@
                       data-label="Country code · asked for, one tap to answer"
                       data-alt="The foot of the booking form: Choose the country code for this phone number, with one-tap buttons for +34, +44, +49, +33, +39 and +31 above Save pending, Back and Save booking"
                       aria-label="Country code · asked for, one tap to answer">
-                      <img class="light-only" src="assets/bk-country-refusal-light.webp" alt="" width="660" height="244" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-country-refusal-dark.webp" alt="" width="660" height="244" loading="lazy" />
+                      <img class="light-only" src="assets/bk-country-refusal-light.webp" alt="" width="660" height="290" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-country-refusal-dark.webp" alt="" width="660" height="290" loading="lazy" />
+                    </button>
+                    <button type="button" class="thumb"
+                      data-light="assets/bk-other-code-light.webp"
+                      data-dark="assets/bk-other-code-dark.webp"
+                      data-label="Other code · the full country list, opening upward"
+                      data-alt="The foot of the booking form with Other code… opened: the full list of countries and their codes (Afghanistan +93, Albania +355, Algeria +213…) opens upward above the field, with the search box at the bottom next to the field, above Save pending, Back and Save booking"
+                      aria-label="Other code · the full country list, opening upward">
+                      <img class="light-only" src="assets/bk-other-code-light.webp" alt="" width="660" height="554" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-other-code-dark.webp" alt="" width="660" height="554" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-suggest-light.webp"
@@ -528,8 +565,8 @@
                       data-label="Search · find any booking across every date"
                       data-alt="Global search panel with a query box and result rows matching a guest name across dates, each showing status and party size"
                       aria-label="Search · find any booking across every date">
-                      <img class="light-only" src="assets/bk-search-light.webp" alt="" width="800" height="691" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-search-dark.webp" alt="" width="800" height="691" loading="lazy" />
+                      <img class="light-only" src="assets/bk-search-light.webp" alt="" width="800" height="739" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-search-dark.webp" alt="" width="800" height="739" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-waitlist-light.webp"
@@ -562,7 +599,7 @@
                       data-light="assets/bk-walkin-light.webp"
                       data-dark="assets/bk-walkin-dark.webp"
                       data-label="Walk-in · seat a party in seconds"
-                      data-alt="Walk-in form for 2 at 20:30: a table picker grouped by cluster with each busy table marked busy in red, tables 8 and 10 free, and a warning that the kitchen may be busy"
+                      data-alt="Walk-in form for 2 at 20:30: a table picker grouped by cluster with each busy table marked busy in red, tables 10, 11 and 12 free, and a warning that the kitchen may be busy"
                       aria-label="Walk-in · seat a party in seconds">
                       <img class="light-only" src="assets/bk-walkin-light.webp" alt="" width="660" height="1088" loading="lazy" />
                       <img class="dark-only" src="assets/bk-walkin-dark.webp" alt="" width="660" height="1088" loading="lazy" />
@@ -571,7 +608,7 @@
                       data-light="assets/bk-block-light.webp"
                       data-dark="assets/bk-block-dark.webp"
                       data-label="Table blocking · take a table out of service"
-                      data-alt="Table 13&#39;s panel for Wed 02.12 with a block from 19:00 to 23:00, an Unblock button and + Add block"
+                      data-alt="Table 13&#39;s panel for Wed 09.12 with a block from 19:00 to 23:00, an Unblock button and + Add block"
                       aria-label="Table blocking · take a table out of service">
                       <img class="light-only" src="assets/bk-block-light.webp" alt="" width="660" height="331" loading="lazy" />
                       <img class="dark-only" src="assets/bk-block-dark.webp" alt="" width="660" height="331" loading="lazy" />
@@ -580,7 +617,7 @@
                       data-light="assets/bk-settings-general-light.webp"
                       data-dark="assets/bk-settings-general-dark.webp"
                       data-label="Settings · opening hours and special days, shared by every device"
-                      data-alt="The General settings tab, headed These are the restaurant's settings, shared by everyone, on every device: opening hours for each weekday, special days (closed over Christmas, a New Year's Eve set menu with its own hours, and one already past), the afternoon/evening shift split and the auto-optimiser's daily cutoff"
+                      data-alt="The General settings tab, headed These are the restaurant's settings, shared by everyone, on every device: opening hours for each weekday, special days (closed over Christmas, and a New Year's Eve set menu with its own hours), the afternoon/evening shift split and the auto-optimiser's daily cutoff"
                       aria-label="Settings · opening hours and special days, shared by every device">
                       <img class="light-only" src="assets/bk-settings-general-light.webp" alt="" width="872" height="1332" loading="lazy" />
                       <img class="dark-only" src="assets/bk-settings-general-dark.webp" alt="" width="872" height="1332" loading="lazy" />
@@ -607,7 +644,7 @@
                       data-light="assets/bk-settings-app-light.webp"
                       data-dark="assets/bk-settings-app-dark.webp"
                       data-label="App settings · dark mode, width, motion, offline"
-                      data-alt="The App settings tab: automatic dark mode, dark mode, app width, reduce animations, work offline, plan zoom and pan, table availability, lock navigation and split view, then a Timeline group for this device: larger text, tinted indoor tables, tap an empty cell to book, vibrate on drag, drag hold (Short, Normal or Long) and the zoom defaults; headed &quot;Settings follow your account on every device, except where noted&quot;"
+                      data-alt="The App settings tab: automatic dark mode, dark mode, app width with Fit to screen, reduce animations, work offline, plan zoom and pan, table availability, lock navigation and split view, then a Timeline group for this device: larger text, tinted indoor tables, tap an empty cell to book, vibrate on drag, drag hold (Short, Normal or Long) and the zoom defaults; headed &quot;Settings follow your account on every device, except where noted&quot;"
                       aria-label="App settings · dark mode, width, motion, offline">
                       <img class="light-only" src="assets/bk-settings-app-light.webp" alt="" width="872" height="1403" loading="lazy" />
                       <img class="dark-only" src="assets/bk-settings-app-dark.webp" alt="" width="872" height="1403" loading="lazy" />
@@ -670,7 +707,7 @@
                       data-light="assets/bk-settings-vouchers-light.webp"
                       data-dark="assets/bk-settings-vouchers-dark.webp"
                       data-label="Vouchers · issued, part-used, spent and void"
-                      data-alt="The voucher list with 28 vouchers and 677.4 € outstanding, filtered to Open, with rows showing the amount issued, the expiry date, open or spent, and what&#39;s left; one voucher is unfolded to show its redemption, a reversal and Void voucher"
+                      data-alt="The voucher list with 29 vouchers and 677.4 € outstanding, filtered to Open, with rows showing the amount issued, the expiry date, open or spent, and what&#39;s left; one voucher is unfolded to show its redemption, a reversal and Void voucher"
                       aria-label="Vouchers · issued, part-used, spent and void">
                       <img class="light-only" src="assets/bk-settings-vouchers-light.webp" alt="" width="806" height="826" loading="lazy" />
                       <img class="dark-only" src="assets/bk-settings-vouchers-dark.webp" alt="" width="806" height="826" loading="lazy" />
@@ -715,7 +752,7 @@
                       data-light="assets/bk-crash-light.webp"
                       data-dark="assets/bk-crash-dark.webp"
                       data-label="Crash trail · every crash leaves an entry"
-                      data-alt="The activity log filtered to Crashes, 34 of 500 entries shown, each a crash in the timeline with its error message and marked Automatic, with a Download crash data button; the person column is blurred"
+                      data-alt="The activity log filtered to Crashes, 21 of 500 entries shown, each a crash in the timeline with its error message and marked Automatic, with a Download crash data button; the person column is blurred"
                       aria-label="Crash trail · every crash leaves an entry">
                       <img class="light-only" src="assets/bk-crash-light.webp" alt="" width="652" height="932" loading="lazy" />
                       <img class="dark-only" src="assets/bk-crash-dark.webp" alt="" width="652" height="932" loading="lazy" />
@@ -742,7 +779,7 @@
                       data-light="assets/bk-wa-menu-light.webp"
                       data-dark="assets/bk-wa-menu-dark.webp"
                       data-label="WhatsApp menu · Inbox, Archived and the simulator"
-                      data-alt="The WhatsApp mark opened as the inbox&#39;s menu: Inbox with 8 unread, Archived with 7, Simulator and Edit templates; beside it, the select, Needs action and search buttons"
+                      data-alt="The WhatsApp mark opened as the inbox&#39;s menu: Inbox with 8 unread, Archived with 7, Simulator and Edit templates; beside it, the select, Needs action and search buttons, with Needs action's count, 9, on a red badge"
                       aria-label="WhatsApp menu · Inbox, Archived and the simulator">
                       <img class="light-only" src="assets/bk-wa-menu-light.webp" alt="" width="568" height="417" loading="lazy" />
                       <img class="dark-only" src="assets/bk-wa-menu-dark.webp" alt="" width="568" height="417" loading="lazy" />
@@ -751,16 +788,16 @@
                       data-light="assets/bk-wa-draft-light.webp"
                       data-dark="assets/bk-wa-draft-dark.webp"
                       data-label="WhatsApp draft · name, party, date, time and occasion from one message"
-                      data-alt="The draft parsed from a Spanish WhatsApp message: Lucía · 6 guests · Sat 21.11 · 21:00 · Birthday, rated Looks right; no tables for 6 at 21:00, so it offers Accept at 18:15, 18:30, 18:45 or 19:00, with Add to waitlist, Suggest these, Accept &amp; open and Dismiss"
+                      data-alt="The draft parsed from a Spanish WhatsApp message: Lucía · 6 guests · Sat 28.11 · 21:00 · Birthday, rated Looks right; it fits at 21:00, so no other times are offered"
                       aria-label="WhatsApp draft · name, party, date, time and occasion from one message">
-                      <img class="light-only" src="assets/bk-wa-draft-light.webp" alt="" width="879" height="287" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-wa-draft-dark.webp" alt="" width="879" height="287" loading="lazy" />
+                      <img class="light-only" src="assets/bk-wa-draft-light.webp" alt="" width="879" height="207" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-wa-draft-dark.webp" alt="" width="879" height="207" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-wa-window-light.webp"
                       data-dark="assets/bk-wa-window-dark.webp"
                       data-label="24-hour window · the time left to reply"
-                      data-alt="A German guest&#39;s request for 4 on Saturday at 8pm, one gluten-free; the header carries an amber Window: 2h 48m left chip, and the draft below offers 18:45 to 19:30 because the kitchen may be busy at 20:00"
+                      data-alt="A German guest&#39;s request for 4 on Saturday at 8pm, one gluten-free; the header carries an amber Window: 2h 48m left chip, and the draft below reads Sat 28.11 at 20:00, fits at 20:00"
                       aria-label="24-hour window · the time left to reply">
                       <img class="light-only" src="assets/bk-wa-window-light.webp" alt="" width="879" height="842" loading="lazy" />
                       <img class="dark-only" src="assets/bk-wa-window-dark.webp" alt="" width="879" height="842" loading="lazy" />
@@ -769,7 +806,7 @@
                       data-light="assets/bk-refusal-light.webp"
                       data-dark="assets/bk-refusal-dark.webp"
                       data-label="Refused · a level that can't take bookings"
-                      data-alt="An English WhatsApp request for 2 tomorrow at 8pm, drafted as 2 guests · Thu 19.11 · 20:00, fits at 20:00; Accept &amp; open was refused, and a pill over the chat reads You don&#39;t have permission to take bookings"
+                      data-alt="An English WhatsApp request for 2 tomorrow at 8pm, drafted as 2 guests · Sun 22.11 · 20:00, fits at 20:00; Accept &amp; open was refused, and a pill over the chat reads You don&#39;t have permission to take bookings"
                       aria-label="Refused · a level that can't take bookings">
                       <img class="light-only" src="assets/bk-refusal-light.webp" alt="" width="879" height="842" loading="lazy" />
                       <img class="dark-only" src="assets/bk-refusal-dark.webp" alt="" width="879" height="842" loading="lazy" />
@@ -780,8 +817,8 @@
                       data-label="WhatsApp Business app · the restaurant phone and MGT on one number"
                       data-alt="Lucía's thread after the restaurant phone joined the number: the name saved on the phone, Lucía (terraza), in the header; her follow-up question marked edited; a reply typed on the phone marked phone; and a message she deleted, shown as Message deleted by the customer"
                       aria-label="WhatsApp Business app · the restaurant phone and MGT on one number">
-                      <img class="light-only" src="assets/bk-wa-coexist-light.webp" alt="" width="879" height="480" loading="lazy" />
-                      <img class="dark-only" src="assets/bk-wa-coexist-dark.webp" alt="" width="879" height="480" loading="lazy" />
+                      <img class="light-only" src="assets/bk-wa-coexist-light.webp" alt="" width="879" height="560" loading="lazy" />
+                      <img class="dark-only" src="assets/bk-wa-coexist-dark.webp" alt="" width="879" height="560" loading="lazy" />
                     </button>
                     <button type="button" class="thumb"
                       data-light="assets/bk-wa-moved-light.webp"
@@ -796,7 +833,7 @@
                       data-light="assets/bk-wa-media-light.webp"
                       data-dark="assets/bk-wa-media-dark.webp"
                       data-label="WhatsApp media · photos, voice notes and PDFs"
-                      data-alt="A thread for a party of 12 with a photo captioned Así es la mesa que nos gustaría, a voice message with a play button, and a PDF, menu-grupos-2026.pdf, with an Open link; the draft below reads 12 guests · Fri 20.11 · 20:30, with the kitchen possibly busy"
+                      data-alt="A thread for a party of 12 with a photo captioned Así es la mesa que nos gustaría, a voice message with a play button, and a PDF, menu-grupos-2026.pdf, with an Open link; the draft below reads 12 guests · Fri 27.11 · 20:30, fits"
                       aria-label="WhatsApp media · photos, voice notes and PDFs">
                       <img class="light-only" src="assets/bk-wa-media-light.webp" alt="" width="879" height="842" loading="lazy" />
                       <img class="dark-only" src="assets/bk-wa-media-dark.webp" alt="" width="879" height="842" loading="lazy" />
